@@ -38,6 +38,12 @@
                 <module>lab</module>
             </modules>
         </profile>
+        <profile>
+            <id>jmh</id>
+            <modules>
+                <module>jmh</module>
+            </modules>
+        </profile>
     </profiles>
 
 </project>
