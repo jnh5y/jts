@@ -1,6 +1,7 @@
 package org.locationtech.jts.jmh;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.locationtech.jts.geom.Envelope;
 import org.locationtech.jts.geom.Geometry;
@@ -26,6 +27,16 @@ public class BufferBench {
     }
     static Geometry polygon = ssf.createSineStar();
 
+    AtomicBoolean firstTime = new AtomicBoolean(true);
+
+    void firstTime() {
+        if (firstTime.get()) {
+            try {
+                Thread.sleep(10000);
+            } catch (Exception e) {}
+            firstTime.set(false);
+        }
+    }
 
     static Geometry readGeometry(String wkt){
         try {
@@ -38,11 +49,13 @@ public class BufferBench {
 
     @Benchmark
     public void bufferPoint() {
+        firstTime();
         point.buffer(1.0, 1000);
     }
 
     @Benchmark
     public void bufferPolygon() {
+        firstTime();
         polygon.buffer(1.0, 1000);
     }
 

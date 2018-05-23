@@ -620,10 +620,28 @@ class OffsetSegmentGenerator
 
     double currAngle = initAngle;
     Coordinate pt = new Coordinate();
+
+    double angle = startAngle + directionFactor * currAngle;
+
+    double cosine = Math.cos(angle);
+    double sine   = Math.sin(angle);
+
+    double deltaCosine = Math.cos(currAngleInc * directionFactor);
+    double deltaSine   = Math.sin(currAngleInc * directionFactor);
+
+    double oldCosine, oldSine;
+
     while (currAngle < totalAngle) {
-      double angle = startAngle + directionFactor * currAngle;
-      pt.x = p.x + radius * Math.cos(angle);
-      pt.y = p.y + radius * Math.sin(angle);
+
+      pt.x = p.x + radius * cosine;
+      pt.y = p.y + radius * sine;
+
+      oldCosine = cosine;
+      oldSine   = sine;
+
+      cosine = oldCosine * deltaCosine - oldSine * deltaSine;
+      sine   = oldSine   * deltaCosine + oldCosine * deltaSine;
+
       segList.addPt(pt);
       currAngle += currAngleInc;
     }
