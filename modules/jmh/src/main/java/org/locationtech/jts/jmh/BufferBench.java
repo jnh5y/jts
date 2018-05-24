@@ -27,7 +27,7 @@ public class BufferBench {
     }
     static Geometry polygon = ssf.createSineStar();
 
-    AtomicBoolean firstTime = new AtomicBoolean(true);
+    AtomicBoolean firstTime = new AtomicBoolean(false);
 
     void firstTime() {
         if (firstTime.get()) {
@@ -48,9 +48,21 @@ public class BufferBench {
     }
 
     @Benchmark
-    public void bufferPoint() {
+    public void bufferPoint1000() {
         firstTime();
         point.buffer(1.0, 1000);
+    }
+
+    @Benchmark
+    public void bufferPoint100() {
+        firstTime();
+        point.buffer(1.0, 100);
+    }
+
+    @Benchmark
+    public void bufferPoint10() {
+        firstTime();
+        point.buffer(1.0, 10);
     }
 
     @Benchmark
