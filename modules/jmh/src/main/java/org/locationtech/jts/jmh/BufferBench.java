@@ -1,8 +1,10 @@
 package org.locationtech.jts.jmh;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import org.apache.commons.math3.util.FastMath;
 import org.locationtech.jts.geom.Envelope;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.util.SineStarFactory;
@@ -14,9 +16,9 @@ import org.openjdk.jmh.annotations.*;
 @OutputTimeUnit(TimeUnit.SECONDS)
 @Fork(1)
 @Warmup(iterations = 3)
-@Measurement(iterations = 3, time = 2, timeUnit = TimeUnit.SECONDS)
+@Measurement(iterations = 3, time = 20, timeUnit = TimeUnit.SECONDS)
 public class BufferBench {
-
+    static Random rng = new Random();
     static WKTReader reader = new WKTReader();
     static Geometry point = readGeometry("POINT(1 2)");
 
@@ -27,7 +29,7 @@ public class BufferBench {
     }
     static Geometry polygon = ssf.createSineStar();
 
-    AtomicBoolean firstTime = new AtomicBoolean(false);
+    AtomicBoolean firstTime = new AtomicBoolean(true);
 
     void firstTime() {
         if (firstTime.get()) {
@@ -70,5 +72,21 @@ public class BufferBench {
         firstTime();
         polygon.buffer(1.0, 1000);
     }
+
+//    @Benchmark
+//    public double javaAtan2() {
+//        double y = rng.nextDouble();
+//        double x = rng.nextDouble();
+//
+//        return Math.atan2(y, x);
+//    }
+//
+//    @Benchmark
+//    public double fastAtan2() {
+//        double y = rng.nextDouble();
+//        double x = rng.nextDouble();
+//
+//        return FastMath.atan2(y, x);
+//    }
 
 }
