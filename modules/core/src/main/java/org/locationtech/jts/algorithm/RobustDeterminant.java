@@ -85,7 +85,12 @@ public class RobustDeterminant {
   /**
    * Computes the sign of the determinant of the 2x2 matrix
    * with the given entries, in a robust way.
-   * 
+   *
+   * @param x1 x1
+   * @param x2 x2
+   * @param y1 y1
+   * @param y2 y2
+   *
    * @return -1 if the determinant is negative,
    * @return  1 if the determinant is positive,
    * @return  0 if the determinant is 0.

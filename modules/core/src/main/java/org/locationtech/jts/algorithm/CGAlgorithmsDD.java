@@ -56,7 +56,11 @@ public class CGAlgorithmsDD
   /**
    * Computes the sign of the determinant of the 2x2 matrix
    * with the given entries.
-   * 
+   *
+   * @param x1 x1
+   * @param x2 x2
+   * @param y1 y1
+   * @param y2 y2
    * @return -1 if the determinant is negative,
    * @return  1 if the determinant is positive,
    * @return  0 if the determinant is 0.
@@ -70,7 +74,12 @@ public class CGAlgorithmsDD
   /**
    * Computes the sign of the determinant of the 2x2 matrix
    * with the given entries.
-   * 
+   *
+   * @param dx1 x1
+   * @param dx2 x2
+   * @param dy1 y1
+   * @param dy2 y2
+   *
    * @return -1 if the determinant is negative,
    * @return  1 if the determinant is positive,
    * @return  0 if the determinant is 0.
@@ -160,11 +169,11 @@ public class CGAlgorithmsDD
    * using DD arithmetic.
    * Currently does not handle case of parallel lines.
    * 
-   * @param p1
-   * @param p2
-   * @param q1
-   * @param q2
-   * @return
+   * @param p1 Initial coordinate of the first line
+   * @param p2 Second coordinate of the first line
+   * @param q1 Initial coordinate of the second line
+   * @param q2 Second coordinate of the second line
+   * @return Intersection of two lines
    */
   public static Coordinate intersection(
       Coordinate p1, Coordinate p2,

@@ -90,7 +90,7 @@ public class DiscreteHausdorffDistance
    * subsegments, whose fraction of the total length is closest
    * to the given fraction.
    * 
-   * @param densifyFrac
+   * @param densifyFrac Fraction for densification, between 0 and 1.
    */
   public void setDensifyFraction(double densifyFrac)
   {

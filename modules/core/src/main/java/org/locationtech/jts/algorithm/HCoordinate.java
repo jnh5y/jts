@@ -33,6 +33,12 @@ public class HCoordinate
    * lie outside the envelope of the line segments themselves.  In order
    * to increase the precision of the calculation input points should be normalized
    * before passing them to this routine.
+   *
+   * @param p1 Initial coordinate of the first line
+   * @param p2 Second coordinate of the first line
+   * @param q1 Initial coordinate of the second line
+   * @param q2 Second coordinate of the second line
+   * @return Coordinate representing the intersection of the two lines
    */
   public static Coordinate intersection(
       Coordinate p1, Coordinate p2,
@@ -115,8 +121,8 @@ public class HCoordinate
    * define by the homogenous coordinates represented by two
    * {@link Coordinate}s.
    * 
-   * @param p1
-   * @param p2
+   * @param p1 Coordinate 1
+   * @param p2 Coordinate 2
    */
   public HCoordinate(Coordinate p1, Coordinate p2) 
   {

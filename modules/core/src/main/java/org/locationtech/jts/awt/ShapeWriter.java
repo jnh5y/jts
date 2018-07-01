@@ -47,8 +47,6 @@ import org.locationtech.jts.geom.Polygon;
  * If neither strategy is enabled, all vertices
  * of the input <tt>Geometry</tt>
  * will be represented in the output <tt>Shape</tt>.
- * <p>
- * 
  */
 public class ShapeWriter 
 {
@@ -120,7 +118,7 @@ public class ShapeWriter
 	 * <p>
 	 * The default is <tt>false</tt>.
 	 * 
-	 * @param doDecimation whether decimation is to be used
+	 * @param doRemoveDuplicatePoints whether decimation is to be used
 	 */
   public void setRemoveDuplicatePoints(boolean doRemoveDuplicatePoints)
   {

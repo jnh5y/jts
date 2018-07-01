@@ -36,6 +36,7 @@ public class Distance {
    *          one point of the line
    * @param D
    *          another point of the line (must be different to A)
+   * @return  distance from a line segment AB to a line segment CD
    */
   public static double segmentToSegment(Coordinate A, Coordinate B,
       Coordinate C, Coordinate D)

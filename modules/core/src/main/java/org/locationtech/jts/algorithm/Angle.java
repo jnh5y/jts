@@ -59,6 +59,8 @@ public class Angle
    * relative to the positive X-axis.
    * The angle is normalized to be in the range [ -Pi, Pi ].
    *
+   * @param p0 coordinate for the start of the vector
+   * @param p1 coordinate for the end of the vector
    * @return the normalized angle (in radians) that p0-p1 makes with the positive x-axis.
    */
   public static double angle(Coordinate p0, Coordinate p1) {
@@ -72,6 +74,7 @@ public class Angle
    * relative to the positive X-axis.
    * The angle is normalized to be in the range ( -Pi, Pi ].
    *
+   * @param p coordinate
    * @return the normalized angle (in radians) that p makes with the positive x-axis.
    */
   public static double angle(Coordinate p) {
@@ -88,6 +91,7 @@ public class Angle
    * @param p0 an endpoint of the angle
    * @param p1 the base of the angle
    * @param p2 the other endpoint of the angle
+   * @return whether or not the angle described is acute
    */
   public static boolean isAcute(Coordinate p0, Coordinate p1, Coordinate p2)
   {
@@ -109,6 +113,7 @@ public class Angle
    * @param p0 an endpoint of the angle
    * @param p1 the base of the angle
    * @param p2 the other endpoint of the angle
+   * @return whether or not the angle described is obtuse
    */
   public static boolean isObtuse(Coordinate p0, Coordinate p1, Coordinate p2)
   {

@@ -213,7 +213,7 @@
                     <overview>${basedir}/modules/core/src/main/javadoc/overview.html</overview>
 
                     <excludePackageNames>org.locationtech.jtsexample.*,org.locationtech.jtstest,org.locationtech.jtstest.*</excludePackageNames>
-                    <failOnError>false</failOnError>
+                    <failOnError>true</failOnError>
                     <groups>
                         <group>
                             <title>Core - Geometry</title>

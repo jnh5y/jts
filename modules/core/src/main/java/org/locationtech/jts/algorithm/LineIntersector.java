@@ -87,6 +87,11 @@ public abstract class LineIntersector
    * My hypothesis is that the function is safe to use for points which are the
    * result of <b>rounding</b> points which lie on the line,
    * but not safe to use for <b>truncated</b> points.
+   *
+   * @param p p
+   * @param p0 p0
+   * @param p1 p1
+   * @return "edge distance"
    */
   public static double computeEdgeDistance(
         Coordinate p,
@@ -127,6 +132,11 @@ public abstract class LineIntersector
   /**
    * This function is non-robust, since it may compute the square of large numbers.
    * Currently not sure how to improve this.
+   *
+   * @param p p
+   * @param p1 p1
+   * @param p2 p2
+   * @return "edge distance"
    */
   public static double nonRobustComputeEdgeDistance(
         Coordinate p,
@@ -169,7 +179,7 @@ public abstract class LineIntersector
 
   /**
    * Force computed intersection to be rounded to a given precision model
-   * @param precisionModel
+   * @param precisionModel Precision Model
    * @deprecated use <code>setPrecisionModel</code> instead
    */
   public void setMakePrecise(PrecisionModel precisionModel)
@@ -180,7 +190,7 @@ public abstract class LineIntersector
   /**
    * Force computed intersection to be rounded to a given precision model.
    * No getter is provided, because the precision model is not required to be specified.
-   * @param precisionModel
+   * @param precisionModel Precision Model
    */
   public void setPrecisionModel(PrecisionModel precisionModel)
   {
@@ -204,6 +214,10 @@ public abstract class LineIntersector
    * This function computes the boolean value of the hasIntersection test.
    * The actual value of the intersection (if there is one)
    * is equal to the value of <code>p</code>.
+   *
+   * @param p p
+   * @param p1 p1
+   * @param p2 p2
    */
   public abstract void computeIntersection(
         Coordinate p,
@@ -217,6 +231,12 @@ public abstract class LineIntersector
    * Computes the intersection of the lines p1-p2 and p3-p4.
    * This function computes both the boolean value of the hasIntersection test
    * and the (approximate) value of the intersection point itself (if there is one).
+   *
+   * @param p1 p1
+   * @param p2 p2
+   * @param p3 p3
+   * @param p4 p4
+   *
    */
   public void computeIntersection(
                 Coordinate p1, Coordinate p2,
@@ -229,6 +249,14 @@ public abstract class LineIntersector
 //numIntersects++;
   }
 
+  /**
+   *
+   * @param p1 p1
+   * @param p2 p2
+   * @param q1 p3
+   * @param q2 p4
+   * @return integer type representing intersection type
+   */
   protected abstract int computeIntersect(
                 Coordinate p1, Coordinate p2,
                 Coordinate q1, Coordinate q2);
@@ -303,6 +331,7 @@ public abstract class LineIntersector
    * It does <b>not</b> return true if
    * the input point is internal to the intersection segment.
    *
+   * @param pt Coordinate to test
    * @return true if the input point is one of the intersection points.
    */
   public boolean isIntersection(Coordinate pt) {
@@ -329,6 +358,7 @@ public abstract class LineIntersector
   /**
    * Tests whether either intersection point is an interior point of the specified input segment.
    *
+   * @param inputLineIndex Index to test
    * @return <code>true</code> if either intersection point is in the interior of the input segment
    */
   public boolean isInteriorIntersection(int inputLineIndex)

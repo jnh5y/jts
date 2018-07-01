@@ -89,7 +89,7 @@ public class Densifier {
 	/**
 	 * Creates a new densifier instance.
 	 * 
-	 * @param inputGeom
+	 * @param inputGeom Input Geometry
 	 */
 	public Densifier(Geometry inputGeom) {
 		this.inputGeom = inputGeom;

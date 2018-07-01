@@ -42,7 +42,7 @@ public class SimplePointInAreaLocator
 
   /**
    * Determines the {@link Location} of a point in an areal {@link Geometry}.
-   * Computes {@link Location.BOUNDARY} if the point lies exactly
+   * Computes {@link Location#BOUNDARY} if the point lies exactly
    * on a geometry line segment. 
    * 
    * @param p the point to test
@@ -75,7 +75,7 @@ public class SimplePointInAreaLocator
 
   /**
    * Determines the {@link Location} of a point in a {@link Polygon}.
-   * Computes {@link Location.BOUNDARY} if the point lies exactly
+   * Computes {@link Location#BOUNDARY} if the point lies exactly
    * on the polygon boundary. 
    * 
    * @param p the point to test

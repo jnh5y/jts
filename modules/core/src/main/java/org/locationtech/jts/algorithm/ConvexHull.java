@@ -48,6 +48,7 @@ public class ConvexHull
 
   /**
    * Create a new convex hull construction for the input {@link Geometry}.
+   * @param geometry input geometry
    */
   public ConvexHull(Geometry geometry)
   {
@@ -55,6 +56,8 @@ public class ConvexHull
   }
   /**
    * Create a new convex hull construction for the input {@link Coordinate} array.
+   * @param pts          input coordinates
+   * @param geomFactory Geometry Factory
    */
   public ConvexHull(Coordinate[] pts, GeometryFactory geomFactory)
   {

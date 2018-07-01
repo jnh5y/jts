@@ -81,6 +81,8 @@ public class PointLocator
    * The algorithm for multi-part Geometries
    * takes into account the SFS Boundary Determination Rule.
    *
+   * @param p Coordinate
+   * @param geom Geometry
    * @return the {@link Location} of the point relative to the input Geometry
    */
   public int locate(Coordinate p, Geometry geom)
