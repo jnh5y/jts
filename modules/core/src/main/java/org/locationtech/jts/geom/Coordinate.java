@@ -186,8 +186,9 @@ public class Coordinate implements Comparable, Cloneable, Serializable {
    * Tests if another coordinate has the same values for the X and Y ordinates.
    * The Z ordinate is ignored.
    *
-   *@param c a <code>Coordinate</code> with which to do the 2D comparison.
-   *@return true if <code>other</code> is a <code>Coordinate</code>
+   * @param c a <code>Coordinate</code> with which to do the 2D comparison.
+   * @param tolerance tolerance for equality
+   * @return true if <code>other</code> is a <code>Coordinate</code>
    *      with the same values for X and Y.
    */
   public boolean equals2D(Coordinate c, double tolerance){
@@ -336,7 +337,8 @@ public class Coordinate implements Comparable, Cloneable, Serializable {
   /**
    * Computes a hash code for a double value, using the algorithm from
    * Joshua Bloch's book <i>Effective Java"</i>
-   * 
+   *
+   * @param x  double
    * @return a hashcode for the double value
    */
   public static int hashCode(double x) {

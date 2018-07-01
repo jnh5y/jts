@@ -244,6 +244,9 @@ public class HalfEdge {
    * Compares edges which originate at the same vertex
    * based on the angle they make at their origin vertex with the positive X-axis.
    * This allows sorting edges around their origin vertex in CCW order.
+   *
+   * @param obj Object
+   * @return orientation index
    */
   public int compareTo(Object obj)
   {
@@ -271,9 +274,12 @@ public class HalfEdge {
    * it is trivial to determine which edge has a greater angle.
    * 
    * <li>if the vectors lie in the same quadrant, the 
-   * {@link Orientation#computeOrientation(Coordinate, Coordinate, Coordinate)} function
+   * {@link Orientation#index(Coordinate, Coordinate, Coordinate)} function
    * can be used to determine the relative orientation of the vectors.
    * </ul>
+   *
+   * @param e Half edge
+   * @return Orientation index
    */
   public int compareAngularDirection(HalfEdge e)
   {

@@ -67,8 +67,8 @@ public class CoordinateArrays {
    * in the forward direction of their coordinates,
    * using lexicographic ordering.
    *
-   * @param pts1
-   * @param pts2
+   * @param pts1 Coordinate array
+   * @param pts2 Coordinate array
    * @return an integer indicating the order
    */
   public static int compare(Coordinate[] pts1, Coordinate[] pts2) {
@@ -237,6 +237,8 @@ public class CoordinateArrays {
 
   /**
    * Converts the given Collection of Coordinates into a Coordinate array.
+   * @param coordList list of Coordinates
+   * @return Array of Coordinates
    */
   public static Coordinate[] toCoordinateArray(Collection coordList)
   {
@@ -246,6 +248,9 @@ public class CoordinateArrays {
   /**
    * Returns whether #equals returns true for any two consecutive Coordinates
    * in the given array.
+   *
+   * @param coord Array of Coordinates
+   * @return True, if there are repeated points; false otherwise
    */
   public static boolean hasRepeatedPoints(Coordinate[] coord)
   {
@@ -260,6 +265,10 @@ public class CoordinateArrays {
   /**
    * Returns either the given coordinate array if its length is greater than the
    * given amount, or an empty coordinate array.
+   *
+   * @param n number of points
+   * @param c Array of Coordinates
+   * @return Existing array or an empty one
    */
   public static Coordinate[] atLeastNCoordinatesOrNothing(int n, Coordinate[] c) {
       return c.length >= n ? c : new Coordinate[] {  };
@@ -270,6 +279,9 @@ public class CoordinateArrays {
    * constructs a new array containing no repeated points.
    * Otherwise, returns the argument.
    * @see #hasRepeatedPoints(Coordinate[])
+   *
+   * @param coord Array of Coordinates
+   * @return Array of Coordinates less duplicate Coordinates
    */
   public static Coordinate[] removeRepeatedPoints(Coordinate[] coord)
   {
@@ -303,6 +315,8 @@ public class CoordinateArrays {
   
   /**
    * Reverses the coordinates in an array in-place.
+   *
+   * @param coord Array of Coordinates to reverse
    */
   public static void reverse(Coordinate[] coord)
   {
@@ -319,6 +333,10 @@ public class CoordinateArrays {
    * Returns true if the two arrays are identical, both null, or pointwise
    * equal (as compared using Coordinate#equals)
    * @see Coordinate#equals(Object)
+   *
+   * @param coord1 Array of Coordinates
+   * @param coord2 Array of Coordinates
+   * @return true, if the two arrays are identical, both null, or pointwise; false otherwise
    */
   public static boolean equals(
     Coordinate[] coord1,
@@ -340,6 +358,7 @@ public class CoordinateArrays {
    * @param coord1 an array of Coordinates
    * @param coord2 an array of Coordinates
    * @param coordinateComparator a Comparator for Coordinates
+   * @return true, if the two arrays are identical, both null, or pointwise; false otherwise
    */
   public static boolean equals(
     Coordinate[] coord1,
