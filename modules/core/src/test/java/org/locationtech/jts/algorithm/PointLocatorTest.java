@@ -14,10 +14,11 @@ package org.locationtech.jts.algorithm;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.Location;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 /**
  * Tests PointInRing algorithms
@@ -26,7 +27,7 @@ import junit.textui.TestRunner;
  */
 public class PointLocatorTest extends TestCase {
 
-  private WKTReader reader = new WKTReader();
+  private WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
 
   public static void main(String args[]) {
     TestRunner.run(PointLocatorTest.class);

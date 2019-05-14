@@ -16,7 +16,7 @@ import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 /**
  * Shows basic ways of creating and operating on geometries
@@ -29,7 +29,7 @@ public class BasicExample
       throws Exception
   {
     // read a geometry from a WKT string (using the default geometry factory)
-    Geometry g1 = new WKTReader().read("LINESTRING (0 0, 10 10, 20 20)");
+    Geometry g1 = new WKTReaderBreakBuild().read("LINESTRING (0 0, 10 10, 20 20)");
     System.out.println("Geometry 1: " + g1);
 
     // create a geometry by specifying the coordinates directly

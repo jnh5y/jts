@@ -15,11 +15,12 @@ import junit.framework.TestCase;
 
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 public class SmallHoleRemoverTest extends TestCase {
 
-  private WKTReader reader = new WKTReader();
+  private WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
 
   public SmallHoleRemoverTest(String name) {
     super(name);

@@ -25,7 +25,7 @@ import org.locationtech.jts.operation.distance.DistanceOp;
 public class ClosestPointExample
 {
   static GeometryFactory fact = new GeometryFactory();
-  static WKTReader wktRdr = new WKTReader(fact);
+  static WKTReaderBreakBuild wktRdr = new WKTReaderBreakBuild(fact);
 
   public static void main(String[] args) {
     ClosestPointExample example = new ClosestPointExample();

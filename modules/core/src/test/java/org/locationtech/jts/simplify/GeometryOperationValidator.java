@@ -13,9 +13,10 @@
 package org.locationtech.jts.simplify;
 
 import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.Assert;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -23,7 +24,7 @@ import junit.framework.Assert;
  */
 public class GeometryOperationValidator
 {
-  private static WKTReader rdr = new WKTReader();
+  private static WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
   private Geometry[] ioGeometry;
   private boolean expectedSameStructure = false;
   private String wktExpected = null;

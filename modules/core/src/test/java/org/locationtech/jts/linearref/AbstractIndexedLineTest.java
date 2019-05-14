@@ -15,7 +15,7 @@ package org.locationtech.jts.linearref;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 
@@ -25,7 +25,7 @@ import junit.framework.TestCase;
  */
 public abstract class AbstractIndexedLineTest extends TestCase {
 
-  private WKTReader reader = new WKTReader();
+  private WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
 
   public AbstractIndexedLineTest(String name) {
     super(name);

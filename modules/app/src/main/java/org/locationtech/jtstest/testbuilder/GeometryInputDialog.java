@@ -31,7 +31,8 @@ import javax.swing.text.JTextComponent;
 
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -221,8 +222,8 @@ public class GeometryInputDialog extends JDialog {
 
     Geometry parseGeometry(JTextComponent txt, Color clr) {
         try {
-            WKTReader rdr =
-                new WKTReader(
+            WKTReaderBreakBuild rdr =
+                new WKTReaderBreakBuild(
                     new GeometryFactory(JTSTestBuilder.model().getPrecisionModel(), 0));
             Geometry g = rdr.read(txt.getText());
             txtError.setText("");

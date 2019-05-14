@@ -19,7 +19,8 @@ import java.util.List;
 
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.WKTFileReader;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.io.WKTWriter;
 import org.locationtech.jts.operation.buffer.validate.BufferResultValidator;
 import org.locationtech.jts.util.Stopwatch;
@@ -34,7 +35,7 @@ public class FileBufferResultValidatorTest extends TestCase {
 
   static int MAX_FEATURE = 1;
   
-	WKTReader rdr = new WKTReader();
+	WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
 
   public FileBufferResultValidatorTest(String name) {
     super(name);

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.operation.linemerge.LineMerger;
 
 
@@ -28,7 +28,7 @@ import org.locationtech.jts.operation.linemerge.LineMerger;
  * @version 1.7
  */
 public class LineMergeExample {
-  private WKTReader reader = new WKTReader();
+  private WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
 
   public LineMergeExample() {
   }

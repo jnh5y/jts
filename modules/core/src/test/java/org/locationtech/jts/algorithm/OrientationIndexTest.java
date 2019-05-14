@@ -14,10 +14,11 @@ package org.locationtech.jts.algorithm;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 /**
  * Tests CGAlgorithms.computeOrientation
@@ -27,7 +28,7 @@ public class OrientationIndexTest
     extends TestCase
 {
 
-  private static WKTReader reader = new WKTReader();
+  private static WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
   //private CGAlgorithms rcga = new CGAlgorithms();
 
   public static void main(String args[]) {

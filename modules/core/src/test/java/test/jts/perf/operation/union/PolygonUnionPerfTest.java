@@ -19,7 +19,8 @@ import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.PrecisionModel;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.io.WKTWriter;
 import org.locationtech.jts.util.GeometricShapeFactory;
 
@@ -31,7 +32,7 @@ public class PolygonUnionPerfTest
 
   static PrecisionModel pm = new PrecisionModel();
   static GeometryFactory fact = new GeometryFactory(pm, 0);
-  static WKTReader wktRdr = new WKTReader(fact);
+  static WKTReaderBreakBuild wktRdr = new WKTReaderBreakBuild(fact);
   static WKTWriter wktWriter = new WKTWriter();
 
   GeometryFactory factory = new GeometryFactory();

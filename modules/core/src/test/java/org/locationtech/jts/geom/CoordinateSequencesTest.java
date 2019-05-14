@@ -14,10 +14,11 @@ package org.locationtech.jts.geom;
 
 import org.locationtech.jts.geom.impl.CoordinateArraySequenceFactory;
 import org.locationtech.jts.geom.impl.PackedCoordinateSequenceFactory;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import java.util.Random;
 
@@ -29,7 +30,7 @@ public class CoordinateSequencesTest extends TestCase {
 
   private PrecisionModel precisionModel = new PrecisionModel();
   private GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-  WKTReader reader = new WKTReader(geometryFactory);
+  WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
 
   private static final double[][] ordinateValues = {
           {75.76,77.43},{41.35,90.75},{73.74,41.67},{20.87,86.49},{17.49,93.59},{67.75,80.63},

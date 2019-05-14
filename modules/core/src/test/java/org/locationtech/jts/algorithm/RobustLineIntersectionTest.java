@@ -17,7 +17,7 @@ import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.LineString;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.io.WKTWriter;
 
 import junit.framework.TestCase;
@@ -35,7 +35,7 @@ import junit.textui.TestRunner;
 public class RobustLineIntersectionTest 
 extends TestCase 
 {
-  private WKTReader reader = new WKTReader();
+  private WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
 
 	public static void main(String args[]) {
 		TestRunner.run(RobustLineIntersectionTest.class);

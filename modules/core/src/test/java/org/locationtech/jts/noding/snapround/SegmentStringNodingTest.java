@@ -18,7 +18,8 @@ import java.util.List;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.noding.NodedSegmentString;
 import org.locationtech.jts.noding.SegmentString;
 
@@ -44,7 +45,7 @@ import junit.textui.TestRunner;
  */
 public class SegmentStringNodingTest  extends TestCase {
 
-  WKTReader rdr = new WKTReader();
+  WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
 
   public static void main(String args[]) {
     TestRunner.run(SegmentStringNodingTest.class);
@@ -65,7 +66,7 @@ public class SegmentStringNodingTest  extends TestCase {
   }
   
   private void checkNodedStrings(String wkt, PrecisionModel pm) throws ParseException {
-    Geometry g = new WKTReader().read(wkt);
+    Geometry g = new WKTReaderBreakBuild().read(wkt);
     List<NodedSegmentString> strings = new ArrayList<>();
     strings.add(new NodedSegmentString(g.getCoordinates(), null));
     new MCIndexSnapRounder(pm).computeNodes(strings);

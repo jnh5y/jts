@@ -16,11 +16,12 @@ import junit.framework.TestCase;
 
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 public class InvalidHoleRemoverTest extends TestCase {
 
-  private WKTReader reader = new WKTReader();
+  private WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
 
   public InvalidHoleRemoverTest(String name) {
     super(name);

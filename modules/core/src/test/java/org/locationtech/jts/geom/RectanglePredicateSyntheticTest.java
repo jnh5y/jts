@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
@@ -31,7 +31,7 @@ import junit.textui.TestRunner;
 public class RectanglePredicateSyntheticTest
      extends TestCase
 {
-  private WKTReader rdr = new WKTReader();
+  private WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
   private GeometryFactory fact = new GeometryFactory();
 
   double baseX  = 10;

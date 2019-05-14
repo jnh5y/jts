@@ -24,24 +24,24 @@ import java.util.EnumSet;
 
 
 /**
- * Test for {@link WKTReader}
+ * Test for {@link WKTReaderBreakBuild}
  *
  * @version 1.7
  */
-public class WKTReaderTest extends TestCase {
+public class WKTReaderBreakBuildTest extends TestCase {
 
   // WKT readers used throughout this test
-  private final WKTReader reader2D;
-  private final WKTReader reader2DOld;
-  private final WKTReader reader3D;
-  private final WKTReader reader2DM;
-  private final WKTReader reader3DM;
+  private final WKTReaderBreakBuild reader2D;
+  private final WKTReaderBreakBuild reader2DOld;
+  private final WKTReaderBreakBuild reader3D;
+  private final WKTReaderBreakBuild reader2DM;
+  private final WKTReaderBreakBuild reader3DM;
 
   public static void main(String args[]) {
     TestRunner.run(suite());
   }
 
-  public WKTReaderTest(String name) {
+  public WKTReaderBreakBuildTest(String name) {
     super(name);
 
     reader2D = GeometryTestCase.getWKTReader(Ordinate.createXY(), 1d);
@@ -53,7 +53,7 @@ public class WKTReaderTest extends TestCase {
     reader3DM = GeometryTestCase.getWKTReader(Ordinate.createXYZM(), 1d);
   }
 
-  public static Test suite() { return new TestSuite(WKTReaderTest.class); }
+  public static Test suite() { return new TestSuite(WKTReaderBreakBuildTest.class); }
 
   public void testReadNaN() throws Exception {
 
@@ -188,7 +188,7 @@ public class WKTReaderTest extends TestCase {
             createSequence(Ordinate.createXYZM(), ring1),
             createSequence(Ordinate.createXYZM(), ring2)};
     
-    WKTReader rdr = reader2D;
+    WKTReaderBreakBuild rdr = reader2D;
     Polygon[] poly2D = new Polygon[]{
             (Polygon) rdr.read("POLYGON ((10 10, 10 20, 20 20, 20 15, 10 10))"),
             (Polygon) rdr.read("POLYGON ((10 10, 10 20, 20 20, 20 15, 10 10), (11 11, 12 11, 12 12, 12 11, 11 11))"),
@@ -248,7 +248,7 @@ public class WKTReaderTest extends TestCase {
             createSequence(Ordinate.createXYZM(), coordinates[1])};
 
     // act
-    WKTReader rdr = reader2D;
+    WKTReaderBreakBuild rdr = reader2D;
     MultiPoint mP2D = (MultiPoint) rdr.read("MULTIPOINT ((10 10), (20 20))");
     MultiPoint mP2DE = (MultiPoint) rdr.read("MULTIPOINT EMPTY");
     rdr =  reader3D;
@@ -289,7 +289,7 @@ public class WKTReaderTest extends TestCase {
             createSequence(Ordinate.createXYZM(), coordinates[1])};
 
     // act
-    WKTReader rdr = reader2D;
+    WKTReaderBreakBuild rdr = reader2D;
     MultiLineString mLs2D = (MultiLineString) rdr.read("MULTILINESTRING ((10 10, 20 20), (15 15, 30 15))");
     MultiLineString mLs2DE = (MultiLineString) rdr.read("MULTILINESTRING EMPTY");
     rdr =  reader3D;
@@ -335,7 +335,7 @@ public class WKTReaderTest extends TestCase {
             createSequence(Ordinate.createXYZM(), ring1),
             createSequence(Ordinate.createXYZM(), shell2)};
 
-    WKTReader rdr = reader2D;
+    WKTReaderBreakBuild rdr = reader2D;
     MultiPolygon[] poly2D = new MultiPolygon[]{
             (MultiPolygon) rdr.read("MULTIPOLYGON (((10 10, 10 20, 20 20, 20 15, 10 10)))"),
             (MultiPolygon) rdr.read("MULTIPOLYGON (((10 10, 10 20, 20 20, 20 15, 10 10), (11 11, 12 11, 12 12, 12 11, 11 11)))"),
@@ -395,7 +395,7 @@ public class WKTReaderTest extends TestCase {
     };
 
     // arrange
-    WKTReader rdr = GeometryTestCase.getWKTReader(Ordinate.createXY(), 1);
+    WKTReaderBreakBuild rdr = GeometryTestCase.getWKTReader(Ordinate.createXY(), 1);
     GeometryCollection gc0 = (GeometryCollection)rdr.read("GEOMETRYCOLLECTION (POINT (10 10), POINT (30 30), LINESTRING (15 15, 20 20))");
     GeometryCollection gc1 = (GeometryCollection)rdr.read("GEOMETRYCOLLECTION (POINT (10 10), LINEARRING EMPTY, LINESTRING (15 15, 20 20))");
     GeometryCollection gc2 = (GeometryCollection)rdr.read("GEOMETRYCOLLECTION (POINT (10 10), LINEARRING (10 10, 20 20, 30 40, 10 10), LINESTRING (15 15, 20 20))");
@@ -417,7 +417,7 @@ public class WKTReaderTest extends TestCase {
   public void testReadLargeNumbers() throws Exception {
     PrecisionModel precisionModel = new PrecisionModel(1E9);
     GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-    WKTReader reader = new WKTReader(geometryFactory);
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
     CoordinateSequence point1 = ((Point)reader.read("POINT (123456789.01234567890 10)")).getCoordinateSequence();
     CoordinateSequence point2 = geometryFactory.createPoint(new Coordinate(123456789.01234567890, 10)).getCoordinateSequence();
     assertEquals(point1.getOrdinate(0, CoordinateSequence.X), point2.getOrdinate(0, CoordinateSequence.X), 1E-7);

@@ -24,7 +24,8 @@ import org.locationtech.jts.geom.MultiPolygon;
 import org.locationtech.jts.geom.Polygon;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.io.WKTWriter;
 import org.locationtech.jts.operation.buffer.validate.BufferResultValidator;
 import org.locationtech.jts.util.StringUtil;
@@ -41,7 +42,7 @@ public class BufferValidator
   
   public static void main(String[] args) throws Exception {
     Geometry g =
-      new WKTReader().read(
+      new WKTReaderBreakBuild().read(
         "MULTILINESTRING (( 635074.5418406526 6184832.4888257105, 635074.5681951842 6184832.571842485, 635074.6472587794 6184832.575795664 ), ( 635074.6657069515 6184832.53889932, 635074.6933792098 6184832.451929366, 635074.5642420045 6184832.474330718 ))");
     //System.out.println(g);
     //System.out.println(g.buffer(0.01, 100));
@@ -80,7 +81,7 @@ public class BufferValidator
   private String wkt;
   private GeometryFactory geomFact = new GeometryFactory();
   private WKTWriter wktWriter = new WKTWriter();
-  private WKTReader wktReader;
+  private WKTReaderBreakBuild wktReaderBreakBuild;
 
 
   public BufferValidator(double bufferDistance, String wkt)
@@ -188,19 +189,19 @@ public class BufferValidator
 
   private Geometry getOriginal() throws ParseException {
     if (original == null) {
-      original = wktReader.read(wkt);
+      original = wktReaderBreakBuild.read(wkt);
     }
     return original;
   }
 
 
   public BufferValidator setPrecisionModel(PrecisionModel precisionModel) {
-    wktReader = new WKTReader(new GeometryFactory(precisionModel));
+    wktReaderBreakBuild = new WKTReaderBreakBuild(new GeometryFactory(precisionModel));
     return this;
   }
 
   public BufferValidator setFactory(PrecisionModel precisionModel, int srid) {
-    wktReader = new WKTReader(new GeometryFactory(precisionModel, srid));
+    wktReaderBreakBuild = new WKTReaderBreakBuild(new GeometryFactory(precisionModel, srid));
     return this;
   }
 
@@ -211,7 +212,7 @@ public class BufferValidator
         try {
           //#contains doesn't work with GeometryCollections [Jon Aquino
           // 10/29/2003]
-          buffer = wktReader.read("POINT EMPTY");
+          buffer = wktReaderBreakBuild.read("POINT EMPTY");
         } catch (ParseException e) {
           org.locationtech.jts.util.Assert.shouldNeverReachHere();
         }

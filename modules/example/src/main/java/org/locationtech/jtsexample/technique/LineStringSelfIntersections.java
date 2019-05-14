@@ -15,7 +15,8 @@ package org.locationtech.jtsexample.technique;
 import java.util.*;
 
 import org.locationtech.jts.geom.*;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 /**
  * Shows a technique for identifying the location of self-intersections
@@ -29,7 +30,7 @@ public class LineStringSelfIntersections {
   public static void main(String[] args)
       throws Exception
   {
-    WKTReader rdr = new WKTReader();
+    WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
 
     LineString line1 = (LineString) (rdr.read("LINESTRING (0 0, 10 10, 20 20)"));
     showSelfIntersections(line1);

@@ -54,7 +54,7 @@ public class SimpleMethodsExample
     throws ParseException
   {
     GeometryFactory fact = new GeometryFactory();
-    WKTReader wktRdr = new WKTReader(fact);
+    WKTReaderBreakBuild wktRdr = new WKTReaderBreakBuild(fact);
 
     String wktA = "POLYGON((40 100, 40 20, 120 20, 120 100, 40 100))";
     String wktB = "LINESTRING(20 80, 80 60, 100 140)";

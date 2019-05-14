@@ -14,9 +14,10 @@ package org.locationtech.jts.simplify;
 
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -191,7 +192,7 @@ public class TopologyPreservingSimplifierTest
 
 class TPSimplifierResult
 {
-  private static WKTReader rdr = new WKTReader();
+  private static WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
 
   public static Geometry[] getResult(String wkt, double tolerance)
     throws ParseException

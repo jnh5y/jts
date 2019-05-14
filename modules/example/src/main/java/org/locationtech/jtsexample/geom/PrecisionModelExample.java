@@ -83,7 +83,7 @@ public class PrecisionModelExample
   {
     System.out.println("Running example using Precision Model = " + pm);
     GeometryFactory fact = new GeometryFactory(pm);
-    WKTReader wktRdr = new WKTReader(fact);
+    WKTReaderBreakBuild wktRdr = new WKTReaderBreakBuild(fact);
 
     Geometry A = wktRdr.read(wktA);
     Geometry B = wktRdr.read(wktB);
@@ -98,7 +98,7 @@ public class PrecisionModelExample
     System.out.println("-------------------------------------------");
     System.out.println("Running example using Precision Model = " + pm);
     GeometryFactory fact = new GeometryFactory(pm);
-    WKTReader wktRdr = new WKTReader(fact);
+    WKTReaderBreakBuild wktRdr = new WKTReaderBreakBuild(fact);
 
     Geometry A = wktRdr.read(wktA);
     Geometry B = wktRdr.read(wktB);

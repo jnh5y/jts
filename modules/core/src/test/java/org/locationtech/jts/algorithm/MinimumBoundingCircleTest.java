@@ -17,9 +17,10 @@ import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.textui.TestRunner;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import test.jts.GeometryTestCase;
 
 
@@ -30,7 +31,7 @@ public class MinimumBoundingCircleTest extends GeometryTestCase {
 
   private PrecisionModel precisionModel = new PrecisionModel(1);
   private GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-  WKTReader reader = new WKTReader(geometryFactory);
+  WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
 
   public static void main(String args[]) {
     TestRunner.run(MinimumBoundingCircleTest.class);

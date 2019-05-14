@@ -5,8 +5,9 @@ import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.locationtech.jts.geom.TopologyException;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import test.jts.GeometryTestCase;
 
 public class OverlapUnionTest extends GeometryTestCase {
@@ -66,7 +67,7 @@ public class OverlapUnionTest extends GeometryTestCase {
   private void checkUnionWithTopologyFailure(String wktA, String wktB, double scaleFactor) throws ParseException {
     PrecisionModel pm = new PrecisionModel(scaleFactor);
     GeometryFactory geomFact = new GeometryFactory(pm);
-    WKTReader rdr = new WKTReader(geomFact);
+    WKTReaderBreakBuild rdr = new WKTReaderBreakBuild(geomFact);
 
     Geometry a = rdr.read(wktA);
     Geometry b = rdr.read(wktB);
@@ -101,7 +102,7 @@ public class OverlapUnionTest extends GeometryTestCase {
   private void checkUnion(String wktA, String wktB, boolean isCheckOptimized) throws ParseException {
     PrecisionModel pm = new PrecisionModel();
     GeometryFactory geomFact = new GeometryFactory(pm);
-    WKTReader rdr = new WKTReader(geomFact);
+    WKTReaderBreakBuild rdr = new WKTReaderBreakBuild(geomFact);
 
     Geometry a = rdr.read(wktA);
     Geometry b = rdr.read(wktB);

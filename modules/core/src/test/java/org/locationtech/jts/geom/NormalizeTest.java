@@ -14,10 +14,10 @@
 package org.locationtech.jts.geom;
 
 import org.locationtech.jts.geom.impl.PackedCoordinateSequenceFactory;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
-
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -27,7 +27,7 @@ public class NormalizeTest extends TestCase {
 
   PrecisionModel precisionModel = new PrecisionModel(1);
   GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-  WKTReader reader = new WKTReader(geometryFactory);
+  WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
 
   public NormalizeTest(String Name_) {
     super(Name_);
@@ -183,7 +183,7 @@ public class NormalizeTest extends TestCase {
 
   public void testNormalizePackedCoordinateSequence() throws Exception {
     GeometryFactory pcsFactory = new GeometryFactory(PackedCoordinateSequenceFactory.DOUBLE_FACTORY);
-    WKTReader pcsReader = new WKTReader(pcsFactory);
+    WKTReaderBreakBuild pcsReader = new WKTReaderBreakBuild(pcsFactory);
     Geometry geom = pcsReader.read("LINESTRING (100 100, 0 0)");
     geom.normalize();
     // force PackedCoordinateSequence to be copied with empty coordinate cache

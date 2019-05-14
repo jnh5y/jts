@@ -13,9 +13,10 @@
 package org.locationtech.jts.operation.valid;
 
 import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -33,7 +34,7 @@ import junit.framework.TestCase;
 public class ValidSelfTouchingRingFormingHoleTest
     extends TestCase
 {
-  private static WKTReader rdr = new WKTReader();
+  private static WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
 
   public ValidSelfTouchingRingFormingHoleTest(String name) {
     super(name);

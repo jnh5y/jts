@@ -11,7 +11,7 @@
  */
 package org.locationtech.jts.geom;
 
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
@@ -25,7 +25,7 @@ import junit.textui.TestRunner;
  */
 public class PredicateShortCircuitTest extends TestCase {
 
-    WKTReader rdr = new WKTReader();
+    WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
 
     public static void main(String args[]) {
       TestRunner.run(PredicateShortCircuitTest.class);

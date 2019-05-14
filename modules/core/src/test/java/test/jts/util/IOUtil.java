@@ -14,12 +14,12 @@ package test.jts.util;
 
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 public class IOUtil {
 	  public static Geometry read(String wkt)
 	  {
-		  WKTReader rdr = new WKTReader();
+		  WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
 	    try {
 	      return rdr.read(wkt);
 	    }

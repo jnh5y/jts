@@ -14,10 +14,11 @@ package org.locationtech.jts.triangulate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 /**
  * Tests Delaunay Triangulation classes
@@ -30,7 +31,7 @@ public class DelaunayTest extends TestCase {
   }
   
 	private GeometryFactory geomFact = new GeometryFactory();
-  private WKTReader reader = new WKTReader();
+  private WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
 
   public DelaunayTest(String name) { super(name); }
 

@@ -13,12 +13,13 @@
 
 package org.locationtech.jts.geom;
 
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -30,7 +31,7 @@ public class GeometryCollectionImplTest extends TestCase {
 
   PrecisionModel precisionModel = new PrecisionModel(1000);
   GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-  WKTReader reader = new WKTReader(geometryFactory);
+  WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
 
   public static void main(String args[]) {
     TestRunner.run(suite());
@@ -65,7 +66,7 @@ public class GeometryCollectionImplTest extends TestCase {
   }
 
   public void testGetLength() throws Exception{
-    GeometryCollection g = (GeometryCollection) new WKTReader().read(
+    GeometryCollection g = (GeometryCollection) new WKTReaderBreakBuild().read(
           "MULTIPOLYGON("
           + "((0 0, 10 0, 10 10, 0 10, 0 0), (3 3, 3 7, 7 7, 7 3, 3 3)),"
           + "((100 100, 110 100, 110 110, 100 110, 100 100), (103 103, 103 107, 107 107, 107 103, 103 103)))");

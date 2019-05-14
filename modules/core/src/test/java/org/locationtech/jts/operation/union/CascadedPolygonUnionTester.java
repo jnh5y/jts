@@ -21,7 +21,8 @@ import org.locationtech.jts.algorithm.match.SimilarityMeasureCombiner;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.PrecisionModel;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 /**
  * Compares the results of CascadedPolygonUnion to Geometry.union()
@@ -36,7 +37,7 @@ public class CascadedPolygonUnionTester
 	
   static PrecisionModel pm = new PrecisionModel();
   static GeometryFactory fact = new GeometryFactory(pm, 0);
-  static WKTReader wktRdr = new WKTReader(fact);
+  static WKTReaderBreakBuild wktRdr = new WKTReaderBreakBuild(fact);
 
 	GeometryFactory geomFact = new GeometryFactory();
 	

@@ -23,7 +23,7 @@ import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTFileReader;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.util.Stopwatch;
 
 import junit.framework.TestCase;
@@ -39,7 +39,7 @@ public class InteriorPointTest extends GeometryTestCase
     TestRunner.run(InteriorPointTest.class);
   }
 
-  WKTReader rdr = new WKTReader();
+  WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
 
   public InteriorPointTest(String name)
   {

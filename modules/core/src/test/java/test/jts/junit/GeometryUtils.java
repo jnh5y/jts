@@ -21,14 +21,14 @@ import java.util.List;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTFileReader;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 public class GeometryUtils 
 {
 	//TODO: allow specifying GeometryFactory
 	
-	public static WKTReader reader = new WKTReader();
+	public static WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
 	
   public static List readWKT(String[] inputWKT)
   throws ParseException

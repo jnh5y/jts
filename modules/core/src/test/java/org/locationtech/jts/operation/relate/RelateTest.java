@@ -16,7 +16,7 @@ import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.IntersectionMatrix;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
@@ -36,7 +36,7 @@ public class RelateTest
   }
 
   private GeometryFactory fact = new GeometryFactory();
-  private WKTReader rdr = new WKTReader(fact);
+  private WKTReaderBreakBuild rdr = new WKTReaderBreakBuild(fact);
 
   public RelateTest(String name)
   {

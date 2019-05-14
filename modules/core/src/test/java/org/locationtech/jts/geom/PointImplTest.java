@@ -13,12 +13,13 @@
 
 package org.locationtech.jts.geom;
 
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -30,7 +31,7 @@ public class PointImplTest extends TestCase {
 
   PrecisionModel precisionModel = new PrecisionModel(1000);
   GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-  WKTReader reader = new WKTReader(geometryFactory);
+  WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
 
   public static void main(String args[]) {
     TestRunner.run(suite());

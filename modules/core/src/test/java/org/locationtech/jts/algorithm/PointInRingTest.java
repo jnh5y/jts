@@ -14,7 +14,7 @@ package org.locationtech.jts.algorithm;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.Location;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.textui.TestRunner;
 
@@ -25,7 +25,7 @@ import junit.textui.TestRunner;
  */
 public class PointInRingTest extends AbstractPointInRingTest {
 
-  private WKTReader reader = new WKTReader();
+  private WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
 
   public static void main(String args[]) {
     TestRunner.run(PointInRingTest.class);

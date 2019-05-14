@@ -15,13 +15,12 @@ package org.locationtech.jts.geom;
 import java.util.Arrays;
 
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
-
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -30,8 +29,8 @@ import junit.framework.TestSuite;
 public class GeometryImplTest extends TestCase {
     PrecisionModel precisionModel = new PrecisionModel(1);
     GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-    WKTReader reader = new WKTReader(geometryFactory);
-    WKTReader readerFloat = new WKTReader();
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
+    WKTReaderBreakBuild readerFloat = new WKTReaderBreakBuild();
 
     public GeometryImplTest(String name) {
         super(name);
@@ -102,7 +101,7 @@ public class GeometryImplTest extends TestCase {
     }
 
     public void testOutOfMemoryError() throws Exception {
-        doTestFromCommcast2003AtYahooDotCa(new WKTReader());
+        doTestFromCommcast2003AtYahooDotCa(new WKTReaderBreakBuild());
     }
     
   
@@ -116,7 +115,7 @@ public class GeometryImplTest extends TestCase {
               + "((160 300, 160 200, 260 200, 260 300, 160 300)))").buffer(0);
     }
 
-    private void doTestFromCommcast2003AtYahooDotCa(WKTReader reader)
+    private void doTestFromCommcast2003AtYahooDotCa(WKTReaderBreakBuild reader)
         throws ParseException {
         readerFloat.read(
             "POLYGON ((708653.498611049 2402311.54647056, 708708.895756966 2402203.47250014, 708280.326454234 2402089.6337791, 708247.896591321 2402252.48269854, 708367.379593851 2402324.00761653, 708248.882609455 2402253.07294874, 708249.523621829 2402244.3124463, 708261.854734465 2402182.39086576, 708262.818392579 2402183.35452387, 708653.498611049 2402311.54647056))")

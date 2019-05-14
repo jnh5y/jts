@@ -20,13 +20,13 @@ import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.LineString;
 import org.locationtech.jts.geom.PrecisionModel;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
-
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -38,7 +38,7 @@ public class ConvexHullTest extends TestCase {
 
   PrecisionModel precisionModel = new PrecisionModel(1000);
   GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-  WKTReader reader = new WKTReader(geometryFactory);
+  WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
 
   public static void main(String args[]) {
     TestRunner.run(suite());
@@ -70,42 +70,42 @@ public class ConvexHullTest extends TestCase {
   }
 
   public void test1() throws Exception {
-    WKTReader reader = new WKTReader(new GeometryFactory(new PrecisionModel(1), 0));
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(new GeometryFactory(new PrecisionModel(1), 0));
     LineString lineString = (LineString) reader.read("LINESTRING (30 220, 240 220, 240 220)");
     LineString convexHull = (LineString) reader.read("LINESTRING (30 220, 240 220)");
     assertTrue(convexHull.equalsExact(lineString.convexHull()));
   }
 
   public void test2() throws Exception {
-    WKTReader reader = new WKTReader(new GeometryFactory(new PrecisionModel(1), 0));
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(new GeometryFactory(new PrecisionModel(1), 0));
     Geometry geometry = reader.read("MULTIPOINT (130 240, 130 240, 130 240, 570 240, 570 240, 570 240, 650 240)");
     LineString convexHull = (LineString) reader.read("LINESTRING (130 240, 650 240)");
     assertTrue(convexHull.equalsExact(geometry.convexHull()));
   }
 
   public void test3() throws Exception {
-    WKTReader reader = new WKTReader(new GeometryFactory(new PrecisionModel(1), 0));
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(new GeometryFactory(new PrecisionModel(1), 0));
     Geometry geometry = reader.read("MULTIPOINT (0 0, 0 0, 10 0)");
     LineString convexHull = (LineString) reader.read("LINESTRING (0 0, 10 0)");
     assertTrue(convexHull.equalsExact(geometry.convexHull()));
   }
 
   public void test4() throws Exception {
-    WKTReader reader = new WKTReader(new GeometryFactory(new PrecisionModel(1), 0));
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(new GeometryFactory(new PrecisionModel(1), 0));
     Geometry geometry = reader.read("MULTIPOINT (0 0, 10 0, 10 0)");
     LineString convexHull = (LineString) reader.read("LINESTRING (0 0, 10 0)");
     assertTrue(convexHull.equalsExact(geometry.convexHull()));
   }
 
   public void test5() throws Exception {
-    WKTReader reader = new WKTReader(new GeometryFactory(new PrecisionModel(1), 0));
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(new GeometryFactory(new PrecisionModel(1), 0));
     Geometry geometry = reader.read("MULTIPOINT (0 0, 5 0, 10 0)");
     LineString convexHull = (LineString) reader.read("LINESTRING (0 0, 10 0)");
     assertTrue(convexHull.equalsExact(geometry.convexHull()));
   }
 
   public void test6() throws Exception {
-    WKTReader reader = new WKTReader(new GeometryFactory(new PrecisionModel(1), 0));
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(new GeometryFactory(new PrecisionModel(1), 0));
     Geometry actualGeometry = reader.read("MULTIPOINT (0 0, 5 1, 10 0)").convexHull();
     Geometry expectedGeometry = reader.read("POLYGON ((0 0, 5 1, 10 0, 0 0))");
     assertEquals(expectedGeometry.toString(), actualGeometry.toString());
@@ -135,7 +135,7 @@ public class ConvexHullTest extends TestCase {
   }
 
   public void test7() throws Exception {
-    WKTReader reader = new WKTReader(new GeometryFactory(new PrecisionModel(1), 0));
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(new GeometryFactory(new PrecisionModel(1), 0));
     Geometry geometry = reader.read("MULTIPOINT (0 0, 0 0, 5 0, 5 0, 10 0, 10 0)");
     LineString convexHull = (LineString) reader.read("LINESTRING (0 0, 10 0)");
     assertTrue(convexHull.equalsExact(geometry.convexHull()));

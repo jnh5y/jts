@@ -22,11 +22,8 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKBHexFileReader;
-import org.locationtech.jts.io.WKBReader;
-import org.locationtech.jts.io.WKTFileReader;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.*;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.io.gml2.GMLReader;
 import org.locationtech.jtstest.testbuilder.io.shapefile.Shapefile;
 import org.locationtech.jtstest.util.FileUtil;
@@ -111,7 +108,7 @@ public class IOUtil
   public static Geometry readWKTString(String wkt, GeometryFactory geomFact)
   throws ParseException, IOException 
   {
-    WKTReader reader = new WKTReader(geomFact);
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geomFact);
     WKTFileReader fileReader = new WKTFileReader(new StringReader(wkt), reader);
     List geomList = fileReader.read();
     

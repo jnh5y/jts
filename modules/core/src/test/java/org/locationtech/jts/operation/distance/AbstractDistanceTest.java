@@ -18,15 +18,16 @@ import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.LineString;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import test.jts.GeometryTestCase;
 
 public abstract class AbstractDistanceTest extends GeometryTestCase {
 
   private PrecisionModel precisionModel = new PrecisionModel(1);
   private GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-  WKTReader reader = new WKTReader(geometryFactory);
+  WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
 
   public AbstractDistanceTest(String name) { super(name); }
 

@@ -15,7 +15,8 @@ package org.locationtech.jtsexample.operation.polygonize;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.operation.polygonize.Polygonizer;
 
 /**
@@ -43,7 +44,7 @@ public class PolygonizeExample
   void run()
       throws Exception
   {
-    WKTReader rdr = new WKTReader();
+    WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
     Collection lines = new ArrayList();
 
     lines.add(rdr.read("LINESTRING (0 0 , 10 10)"));   // isolated edge

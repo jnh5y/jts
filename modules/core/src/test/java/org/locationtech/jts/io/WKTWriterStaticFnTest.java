@@ -13,7 +13,7 @@ import java.util.Random;
 public class WKTWriterStaticFnTest extends GeometryTestCase {
 
   private Random _rnd;
-  private WKTReader _reader;
+  private WKTReaderBreakBuild _reader;
 
   public static void main(String[] args) {
     TestRunner.run(new TestSuite(WKTWriterStaticFnTest.class));
@@ -27,7 +27,7 @@ public class WKTWriterStaticFnTest extends GeometryTestCase {
   protected void setUp() throws Exception {
     super.setUp();
     _rnd = new Random(13);
-    _reader = new WKTReader();
+    _reader = new WKTReaderBreakBuild();
     _reader.setIsOldJtsCoordinateSyntaxAllowed(false);
   }
 

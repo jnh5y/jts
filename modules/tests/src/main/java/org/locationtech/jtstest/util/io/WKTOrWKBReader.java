@@ -43,7 +43,7 @@ public class WKTOrWKBReader
   private static final int MAX_CHARS_TO_CHECK = 6;
 
   private GeometryFactory geomFactory;
-  private WKTReader wktReader;
+  private WKTReaderBreakBuild wktReaderBreakBuild;
   private WKBReader wkbReader;
 
   public WKTOrWKBReader()
@@ -53,7 +53,7 @@ public class WKTOrWKBReader
 
   public WKTOrWKBReader(GeometryFactory geomFactory)
   {
-    wktReader = new WKTReader(geomFactory);
+    wktReaderBreakBuild = new WKTReaderBreakBuild(geomFactory);
     wkbReader = new WKBReader(geomFactory);
   }
 
@@ -63,6 +63,6 @@ public class WKTOrWKBReader
     String trimStr = geomStr.trim();
     if (isHex(trimStr, MAX_CHARS_TO_CHECK))
       return wkbReader.read(WKBReader.hexToBytes(trimStr));
-    return wktReader.read(trimStr);
+    return wktReaderBreakBuild.read(trimStr);
   }
 }

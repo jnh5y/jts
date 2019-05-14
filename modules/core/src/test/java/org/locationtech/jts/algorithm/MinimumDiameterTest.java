@@ -16,10 +16,11 @@ import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -29,7 +30,7 @@ public class MinimumDiameterTest extends TestCase {
 
   private PrecisionModel precisionModel = new PrecisionModel(1);
   private GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-  WKTReader reader = new WKTReader(geometryFactory);
+  WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
 
   public static void main(String args[]) {
     TestRunner.run(MinimumDiameterTest.class);
@@ -57,7 +58,7 @@ public class MinimumDiameterTest extends TestCase {
   }  
 
   private void doMinimumDiameterTest(boolean convex, String wkt, Coordinate c0, Coordinate c1) throws ParseException {
-    Coordinate[] minimumDiameter = new MinimumDiameter(new WKTReader().read(wkt), convex).getDiameter().getCoordinates();
+    Coordinate[] minimumDiameter = new MinimumDiameter(new WKTReaderBreakBuild().read(wkt), convex).getDiameter().getCoordinates();
     double tolerance = 1E-10;
     assertEquals(c0.x, minimumDiameter[0].x, tolerance);
     assertEquals(c0.y, minimumDiameter[0].y, tolerance);

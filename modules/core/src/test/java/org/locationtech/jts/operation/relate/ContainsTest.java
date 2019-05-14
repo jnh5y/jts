@@ -14,10 +14,11 @@ package org.locationtech.jts.operation.relate;
 
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -34,7 +35,7 @@ public class ContainsTest
   }
 
   private GeometryFactory fact = new GeometryFactory();
-  private WKTReader rdr = new WKTReader(fact);
+  private WKTReaderBreakBuild rdr = new WKTReaderBreakBuild(fact);
 
   public ContainsTest(String name)
   {

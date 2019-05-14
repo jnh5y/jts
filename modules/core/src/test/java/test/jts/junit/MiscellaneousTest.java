@@ -29,11 +29,11 @@ import org.locationtech.jts.geom.MultiPolygon;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.Polygon;
 import org.locationtech.jts.geom.PrecisionModel;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
-
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -43,7 +43,7 @@ public class MiscellaneousTest extends TestCase {
 
   PrecisionModel precisionModel = new PrecisionModel(1);
   GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-  WKTReader reader = new WKTReader(geometryFactory);
+  WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
 
   public static void main(String args[]) {
     TestRunner.run(MiscellaneousTest.class);

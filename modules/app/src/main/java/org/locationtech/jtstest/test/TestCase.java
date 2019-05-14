@@ -296,7 +296,7 @@ public class TestCase implements Testable {
 
   public void initGeometry() throws ParseException {
     GeometryFactory fact = new GeometryFactory(pm, 0);
-    WKTReader wktRdr = new WKTReader(fact);
+    WKTReaderBreakBuild wktRdr = new WKTReaderBreakBuild(fact);
     if (geom[0] != null) {
       return;
     }
@@ -352,7 +352,7 @@ public class TestCase implements Testable {
       return null;
     }
     GeometryFactory fact = new GeometryFactory(pm, 0);
-    WKTReader wktRdr = new WKTReader(fact);
+    WKTReaderBreakBuild wktRdr = new WKTReaderBreakBuild(fact);
     return wktRdr.read(wellKnownText);
   }
 

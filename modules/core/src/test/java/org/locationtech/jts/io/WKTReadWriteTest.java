@@ -18,8 +18,8 @@ public class WKTReadWriteTest extends TestCase {
           PackedCoordinateSequenceFactory.DOUBLE_FACTORY;
   private final GeometryFactory geometryFactory =
           new GeometryFactory(csFactory);
-  private final WKTReader reader =
-          new WKTReader(geometryFactory);
+  private final WKTReaderBreakBuild reader =
+          new WKTReaderBreakBuild(geometryFactory);
 
   private final WKTWriter writer =
           new WKTWriter(4);

@@ -12,7 +12,7 @@
 
 package org.locationtech.jts.geom;
 
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
@@ -27,7 +27,7 @@ import junit.textui.TestRunner;
 public class RectanglePredicateTest
      extends TestCase
 {
-  private WKTReader rdr = new WKTReader();
+  private WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
   private GeometryFactory fact = new GeometryFactory();
 
   public static void main(String args[]) {

@@ -18,11 +18,11 @@ import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.LineString;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
-
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -32,7 +32,7 @@ public class DistanceTest extends TestCase {
 
   private PrecisionModel precisionModel = new PrecisionModel(1);
   private GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-  WKTReader reader = new WKTReader(geometryFactory);
+  WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
 
   public static void main(String args[]) {
     TestRunner.run(DistanceTest.class);
@@ -89,7 +89,7 @@ public class DistanceTest extends TestCase {
 
   private void doNearestPointsTest(String wkt0, String wkt1, double distance, 
                                    Coordinate p0, Coordinate p1) throws ParseException {
-    DistanceOp op = new DistanceOp(new WKTReader().read(wkt0), new WKTReader().read(wkt1));
+    DistanceOp op = new DistanceOp(new WKTReaderBreakBuild().read(wkt0), new WKTReaderBreakBuild().read(wkt1));
     double tolerance = 1E-10;
     assertEquals(distance, op.nearestPoints()[0].distance(op.nearestPoints()[1]), tolerance);
     assertEquals(p0.x, op.nearestPoints()[0].x, tolerance);

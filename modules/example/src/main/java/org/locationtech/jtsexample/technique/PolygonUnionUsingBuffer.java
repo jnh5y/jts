@@ -13,7 +13,8 @@
 package org.locationtech.jtsexample.technique;
 
 import org.locationtech.jts.geom.*;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 /**
  * Shows a technique for using a zero-width buffer to compute
@@ -39,7 +40,7 @@ public class PolygonUnionUsingBuffer {
   public static void main(String[] args)
       throws Exception
   {
-    WKTReader rdr = new WKTReader();
+    WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
 
     Geometry[] geom = new Geometry[3];
     geom[0] = rdr.read("POLYGON (( 100 180, 100 260, 180 260, 180 180, 100 180 ))");

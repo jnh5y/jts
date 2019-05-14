@@ -7,7 +7,8 @@ import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryCollection;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.io.WKTFileReader;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.util.Assert;
 import org.locationtech.jts.util.Stopwatch;
 import org.locationtech.jtslab.clip.RectangleClipPolygon;
@@ -26,7 +27,7 @@ public class TestPerfRectangleClipPolygon {
     }
   }
   public static List<Geometry> readWKTFile(String filename) throws Exception {
-    WKTFileReader fileRdr = new WKTFileReader(filename, new WKTReader());
+    WKTFileReader fileRdr = new WKTFileReader(filename, new WKTReaderBreakBuild());
     return (List<Geometry>) fileRdr.read();
   }
   

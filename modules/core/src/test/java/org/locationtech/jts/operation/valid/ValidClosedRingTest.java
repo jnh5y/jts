@@ -17,7 +17,7 @@ import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryCollection;
 import org.locationtech.jts.geom.LinearRing;
 import org.locationtech.jts.geom.Polygon;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 
@@ -32,7 +32,7 @@ import junit.framework.TestCase;
 public class ValidClosedRingTest
     extends TestCase
 {
-  private static WKTReader rdr = new WKTReader();
+  private static WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
 
   public ValidClosedRingTest(String name) {
     super(name);

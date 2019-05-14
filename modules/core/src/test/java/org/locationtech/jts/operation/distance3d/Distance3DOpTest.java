@@ -15,16 +15,17 @@ package org.locationtech.jts.operation.distance3d;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 public class Distance3DOpTest extends TestCase 
 {
 	static GeometryFactory geomFact = new GeometryFactory();
-	static WKTReader rdr = new WKTReader();
+	static WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
 	
 	public static void main(String args[]) {
 		TestRunner.run(Distance3DOpTest.class);

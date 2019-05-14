@@ -15,7 +15,7 @@ package test.jts.perf.operation.buffer;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.PrecisionModel;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.operation.buffer.validate.BufferResultValidator;
 
 /**
@@ -31,7 +31,7 @@ public class RandomLineBufferStressTest
 
   private PrecisionModel precisionModel = new PrecisionModel();
   private GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-  WKTReader rdr = new WKTReader(geometryFactory);
+  WKTReaderBreakBuild rdr = new WKTReaderBreakBuild(geometryFactory);
 
   public static void main(String args[]) {
   	try {

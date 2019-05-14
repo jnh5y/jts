@@ -13,7 +13,7 @@
 
 package org.locationtech.jts.geom;
 
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -30,7 +30,7 @@ public class LineStringImplTest extends TestCase {
 
   PrecisionModel precisionModel = new PrecisionModel(1000);
   GeometryFactory geometryFactory = new GeometryFactory(precisionModel, 0);
-  WKTReader reader = new WKTReader(geometryFactory);
+  WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geometryFactory);
 
   public static void main(String args[]) {
     TestRunner.run(suite());
@@ -136,21 +136,21 @@ public class LineStringImplTest extends TestCase {
   }
 
   public void testEquals8() throws Exception {
-    WKTReader reader = new WKTReader(new GeometryFactory(new PrecisionModel(1000), 0));
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(new GeometryFactory(new PrecisionModel(1000), 0));
     MultiLineString l1 = (MultiLineString) reader.read("MULTILINESTRING((1732328800 519578384, 1732026179 519976285, 1731627364 519674014, 1731929984 519276112, 1732328800 519578384))");
     MultiLineString l2 = (MultiLineString) reader.read("MULTILINESTRING((1731627364 519674014, 1731929984 519276112, 1732328800 519578384, 1732026179 519976285, 1731627364 519674014))");
     assertTrue(l1.equals(l2));
   }
 
   public void testEquals9() throws Exception {
-    WKTReader reader = new WKTReader(new GeometryFactory(new PrecisionModel(1), 0));
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(new GeometryFactory(new PrecisionModel(1), 0));
     MultiLineString l1 = (MultiLineString) reader.read("MULTILINESTRING((1732328800 519578384, 1732026179 519976285, 1731627364 519674014, 1731929984 519276112, 1732328800 519578384))");
     MultiLineString l2 = (MultiLineString) reader.read("MULTILINESTRING((1731627364 519674014, 1731929984 519276112, 1732328800 519578384, 1732026179 519976285, 1731627364 519674014))");
     assertTrue(l1.equals(l2));
   }
 
   public void testEquals10() throws Exception {
-    WKTReader reader = new WKTReader(new GeometryFactory(new PrecisionModel(1), 0));
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(new GeometryFactory(new PrecisionModel(1), 0));
     Geometry l1 = reader.read("POLYGON((1732328800 519578384, 1732026179 519976285, 1731627364 519674014, 1731929984 519276112, 1732328800 519578384))");
     Geometry l2 = reader.read("POLYGON((1731627364 519674014, 1731929984 519276112, 1732328800 519578384, 1732026179 519976285, 1731627364 519674014))");
     l1.normalize();

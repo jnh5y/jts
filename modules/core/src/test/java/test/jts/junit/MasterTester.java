@@ -40,7 +40,7 @@ import org.locationtech.jts.index.strtree.IntervalTest;
 import org.locationtech.jts.index.strtree.SIRtreeTest;
 import org.locationtech.jts.index.strtree.STRtreeTest;
 import org.locationtech.jts.io.WKBTest;
-import org.locationtech.jts.io.WKTReaderTest;
+import org.locationtech.jts.io.WKTReaderBreakBuildTest;
 import org.locationtech.jts.io.WKTWriterTest;
 import org.locationtech.jts.linearref.LengthIndexedLineTest;
 import org.locationtech.jts.linearref.LocationIndexedLineTest;
@@ -113,7 +113,7 @@ public class MasterTester extends TestCase {
     result.addTest(new TestSuite(SimpleTest.class));
     result.addTest(new TestSuite(SIRtreeTest.class));
     result.addTest(new TestSuite(STRtreeTest.class));
-    result.addTest(new TestSuite(WKTReaderTest.class));
+    result.addTest(new TestSuite(WKTReaderBreakBuildTest.class));
     result.addTest(new TestSuite(WKTWriterTest.class));
     result.addTest(new TestSuite(WKBTest.class));
     result.addTest(new TestSuite(UnaryUnionTest.class));

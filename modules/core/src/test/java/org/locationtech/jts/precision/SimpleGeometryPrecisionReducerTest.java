@@ -15,7 +15,7 @@ package org.locationtech.jts.precision;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.PrecisionModel;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
@@ -35,7 +35,7 @@ public class SimpleGeometryPrecisionReducerTest
       = new SimpleGeometryPrecisionReducer(pmFixed1);
 
   private GeometryFactory gfFloat = new GeometryFactory(pmFloat, 0);
-  WKTReader reader = new WKTReader(gfFloat);
+  WKTReaderBreakBuild reader = new WKTReaderBreakBuild(gfFloat);
 
   public static void main(String args[]) {
     TestRunner.run(SimpleGeometryPrecisionReducerTest.class);

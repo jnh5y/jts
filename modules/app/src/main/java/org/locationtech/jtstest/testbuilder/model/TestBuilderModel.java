@@ -421,7 +421,7 @@ public class TestBuilderModel
   }
 
   private void loadWKTAfterPMChange() throws ParseException {
-    WKTReader reader = new WKTReader(new GeometryFactory(getPrecisionModel(), 0));
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(new GeometryFactory(getPrecisionModel(), 0));
     for (int i = 0; i < getCases().size(); i++) {
       Testable testable = (Testable) getCases().get(i);
       String wktA = (String) wktABeforePMChange.get(i);

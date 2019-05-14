@@ -22,9 +22,10 @@ import org.locationtech.jts.geom.impl.CoordinateArraySequenceFactory;
 import org.locationtech.jts.geom.impl.PackedCoordinateSequenceFactory;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.Ordinate;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 /**
  * A base class for Geometry tests which provides various utility methods.
@@ -37,7 +38,7 @@ public abstract class GeometryTestCase extends TestCase{
 
   final GeometryFactory geomFactory;
   
-  final WKTReader reader;
+  final WKTReaderBreakBuild reader;
 
   protected GeometryTestCase(String name)
   {
@@ -47,7 +48,7 @@ public abstract class GeometryTestCase extends TestCase{
   protected GeometryTestCase(String name, CoordinateSequenceFactory coordinateSequenceFactory) {
     super(name);
     geomFactory = new GeometryFactory(coordinateSequenceFactory);
-    reader = new WKTReader(geomFactory);
+    reader = new WKTReaderBreakBuild(geomFactory);
   }
 
   protected void checkEqual(Geometry expected, Geometry actual) {
@@ -77,7 +78,7 @@ public abstract class GeometryTestCase extends TestCase{
    * @return the geometry read
    */
   protected static Geometry read(GeometryFactory geomFactory, String wkt) {
-    WKTReader reader = new WKTReader(geomFactory);
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geomFactory);
     try {
        return reader.read(wkt);
     } catch (ParseException e) {
@@ -89,7 +90,7 @@ public abstract class GeometryTestCase extends TestCase{
     return read(reader, wkt);
   }
 
-  public static Geometry read(WKTReader reader, String wkt) {
+  public static Geometry read(WKTReaderBreakBuild reader, String wkt) {
     try {
       return reader.read(wkt);
     } catch (ParseException e) {
@@ -104,7 +105,7 @@ public abstract class GeometryTestCase extends TestCase{
     return geometries;
   }
 
-  public static List readList(WKTReader reader, String[] wkt) {
+  public static List readList(WKTReaderBreakBuild reader, String[] wkt) {
     ArrayList geometries = new ArrayList(wkt.length);
     for (int i = 0; i < wkt.length; i++) {
       geometries.add(read(reader, wkt[i]));
@@ -113,56 +114,56 @@ public abstract class GeometryTestCase extends TestCase{
   }
 
   /**
-   * Gets a {@link WKTReader} to read geometries from WKT with expected ordinates.
+   * Gets a {@link WKTReaderBreakBuild} to read geometries from WKT with expected ordinates.
    *
    * @param ordinateFlags a set of expected ordinates
    * @return a {@code WKTReader}
    */
-  public static WKTReader getWKTReader(EnumSet<Ordinate> ordinateFlags) {
+  public static WKTReaderBreakBuild getWKTReader(EnumSet<Ordinate> ordinateFlags) {
     return getWKTReader(ordinateFlags, new PrecisionModel());
   }
 
   /**
-   * Gets a {@link WKTReader} to read geometries from WKT with expected ordinates.
+   * Gets a {@link WKTReaderBreakBuild} to read geometries from WKT with expected ordinates.
    *
    * @param ordinateFlags a set of expected ordinates
    * @param scale         a scale value to create a {@link PrecisionModel}
    *
    * @return a {@code WKTReader}
    */
-  public static WKTReader getWKTReader(EnumSet<Ordinate> ordinateFlags, double scale) {
+  public static WKTReaderBreakBuild getWKTReader(EnumSet<Ordinate> ordinateFlags, double scale) {
     return getWKTReader(ordinateFlags, new PrecisionModel(scale));
   }
 
   /**
-   * Gets a {@link WKTReader} to read geometries from WKT with expected ordinates.
+   * Gets a {@link WKTReaderBreakBuild} to read geometries from WKT with expected ordinates.
    *
    * @param ordinateFlags a set of expected ordinates
    * @param precisionModel a precision model
    *
    * @return a {@code WKTReader}
    */
-  public static WKTReader getWKTReader(EnumSet<Ordinate> ordinateFlags, PrecisionModel precisionModel) {
+  public static WKTReaderBreakBuild getWKTReader(EnumSet<Ordinate> ordinateFlags, PrecisionModel precisionModel) {
 
-    WKTReader result;
+    WKTReaderBreakBuild result;
 
     if (!ordinateFlags.contains(Ordinate.X)) ordinateFlags.add(Ordinate.X);
     if (!ordinateFlags.contains(Ordinate.Y)) ordinateFlags.add(Ordinate.Y);
 
     if (ordinateFlags.size() == 2)
     {
-      result = new WKTReader(new GeometryFactory(precisionModel, 0, CoordinateArraySequenceFactory.instance()));
+      result = new WKTReaderBreakBuild(new GeometryFactory(precisionModel, 0, CoordinateArraySequenceFactory.instance()));
       result.setIsOldJtsCoordinateSyntaxAllowed(false);
     }
     else if (ordinateFlags.contains(Ordinate.Z))
-      result = new WKTReader(new GeometryFactory(precisionModel, 0, CoordinateArraySequenceFactory.instance()));
+      result = new WKTReaderBreakBuild(new GeometryFactory(precisionModel, 0, CoordinateArraySequenceFactory.instance()));
     else if (ordinateFlags.contains(Ordinate.M)) {
-      result = new WKTReader(new GeometryFactory(precisionModel, 0,
+      result = new WKTReaderBreakBuild(new GeometryFactory(precisionModel, 0,
               PackedCoordinateSequenceFactory.DOUBLE_FACTORY));
       result.setIsOldJtsCoordinateSyntaxAllowed(false);
     }
     else
-      result = new WKTReader(new GeometryFactory(precisionModel, 0, PackedCoordinateSequenceFactory.DOUBLE_FACTORY));
+      result = new WKTReaderBreakBuild(new GeometryFactory(precisionModel, 0, PackedCoordinateSequenceFactory.DOUBLE_FACTORY));
 
     return result;
   }

@@ -15,10 +15,11 @@ package org.locationtech.jts.precision;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 public class MinimumClearanceTest extends TestCase {
   public static void main(String args[]) {
@@ -26,7 +27,7 @@ public class MinimumClearanceTest extends TestCase {
   }
   
   private GeometryFactory geomFact = new GeometryFactory();
-  private WKTReader reader = new WKTReader();
+  private WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
 
   public MinimumClearanceTest(String name) { super(name); }
 

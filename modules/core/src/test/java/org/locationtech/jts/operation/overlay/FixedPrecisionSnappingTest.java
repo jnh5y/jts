@@ -16,16 +16,17 @@ import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 public class FixedPrecisionSnappingTest extends TestCase 
 {
 	PrecisionModel pm = new PrecisionModel(1.0);
 	GeometryFactory fact = new GeometryFactory(pm);
-	WKTReader rdr = new WKTReader(fact);
+	WKTReaderBreakBuild rdr = new WKTReaderBreakBuild(fact);
 	
 	public FixedPrecisionSnappingTest(String name) {
 		super(name);

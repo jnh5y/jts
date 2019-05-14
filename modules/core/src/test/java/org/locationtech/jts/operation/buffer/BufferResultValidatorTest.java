@@ -13,7 +13,7 @@
 package org.locationtech.jts.operation.buffer;
 
 import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.operation.buffer.validate.BufferResultValidator;
 
 import junit.framework.TestCase;
@@ -25,7 +25,7 @@ import junit.framework.TestCase;
  */
 public class BufferResultValidatorTest extends TestCase {
 
-	WKTReader rdr = new WKTReader();
+	WKTReaderBreakBuild rdr = new WKTReaderBreakBuild();
 	
   public BufferResultValidatorTest(String name) {
     super(name);

@@ -132,7 +132,7 @@ import org.locationtech.jts.util.AssertionFailedException;
  *@version 1.7
  * @see WKTWriter
  */
-public class WKTReader
+public class WKTReaderBreakBuild
 {
   private static final String EMPTY = "EMPTY";
   private static final String COMMA = ",";
@@ -162,7 +162,7 @@ public class WKTReader
   /**
    * Creates a reader that creates objects using the default {@link GeometryFactory}.
    */
-  public WKTReader() {
+  public WKTReaderBreakBuild() {
     this(new GeometryFactory());
   }
 
@@ -172,7 +172,7 @@ public class WKTReader
    *
    *@param  geometryFactory  the factory used to create <code>Geometry</code>s.
    */
-  public WKTReader(GeometryFactory geometryFactory) {
+  public WKTReaderBreakBuild(GeometryFactory geometryFactory) {
     this.geometryFactory = geometryFactory;
     this.csFactory = geometryFactory.getCoordinateSequenceFactory();
     this.precisionModel = geometryFactory.getPrecisionModel();

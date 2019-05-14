@@ -37,7 +37,7 @@ public class WKTFileReader
 	private File file = null;
   private Reader reader;
 //  private Reader fileReader = new FileReader(file);
-	private WKTReader wktReader;
+	private WKTReaderBreakBuild wktReaderBreakBuild;
 	private int count = 0;
 	private int limit = -1;
 	private int offset = 0;
@@ -47,35 +47,35 @@ public class WKTFileReader
    * and a <tt>WKTReader</tt> to use to parse the geometries.
    * 
    * @param file the <tt>File</tt> to read from
-   * @param wktReader the geometry reader to use
+   * @param wktReaderBreakBuild the geometry reader to use
    */
-	public WKTFileReader(File file, WKTReader wktReader)
+	public WKTFileReader(File file, WKTReaderBreakBuild wktReaderBreakBuild)
 	{
 		this.file = file;
-    this.wktReader = wktReader;
+    this.wktReaderBreakBuild = wktReaderBreakBuild;
 	}
 	
   /**
    * Creates a new <tt>WKTFileReader</tt>, given the name of the file to read from.
    * 
    * @param filename the name of the file to read from
-   * @param wktReader the geometry reader to use
+   * @param wktReaderBreakBuild the geometry reader to use
    */
-  public WKTFileReader(String filename, WKTReader wktReader)
+  public WKTFileReader(String filename, WKTReaderBreakBuild wktReaderBreakBuild)
   {
-    this(new File(filename), wktReader);
+    this(new File(filename), wktReaderBreakBuild);
   }
   
   /**
    * Creates a new <tt>WKTFileReader</tt>, given a {@link Reader} to read from.
    * 
    * @param reader the reader to read from
-   * @param wktReader the geometry reader to use
+   * @param wktReaderBreakBuild the geometry reader to use
    */
-  public WKTFileReader(Reader reader, WKTReader wktReader)
+  public WKTFileReader(Reader reader, WKTReaderBreakBuild wktReaderBreakBuild)
   {
     this.reader = reader;
-    this.wktReader = wktReader;
+    this.wktReaderBreakBuild = wktReaderBreakBuild;
   }
   
 	/**
@@ -131,7 +131,7 @@ public class WKTFileReader
 			ParseException {
 		List geoms = new ArrayList();
 		while (! isAtEndOfFile(bufferedReader) && ! isAtLimit(geoms)) {
-			Geometry g = wktReader.read(bufferedReader);
+			Geometry g = wktReaderBreakBuild.read(bufferedReader);
 			if (count >= offset)
 				geoms.add(g);
 			count++;

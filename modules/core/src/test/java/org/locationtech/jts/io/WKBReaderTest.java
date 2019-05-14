@@ -34,9 +34,9 @@ public class WKBReaderTest  extends TestCase
   }
 
   private GeometryFactory geomFactory = new GeometryFactory();
-  private WKTReader rdr = new WKTReader(geomFactory);
-  private WKTReader rdrM =
-          new WKTReader(new GeometryFactory(PackedCoordinateSequenceFactory.DOUBLE_FACTORY));
+  private WKTReaderBreakBuild rdr = new WKTReaderBreakBuild(geomFactory);
+  private WKTReaderBreakBuild rdrM =
+          new WKTReaderBreakBuild(new GeometryFactory(PackedCoordinateSequenceFactory.DOUBLE_FACTORY));
 
   public WKBReaderTest(String name) {
     super(name);
@@ -200,7 +200,7 @@ public class WKBReaderTest  extends TestCase
     byte[] wkb = WKBReader.hexToBytes(wkbHex);
     Geometry g2 = wkbReader.read(wkb);
 
-    WKTReader useRdr = rdr;
+    WKTReaderBreakBuild useRdr = rdr;
     if (expectedWKT.contains("ZM"))
       useRdr = rdrM;
     else if (expectedWKT.contains("M(") || expectedWKT.contains("M ("))

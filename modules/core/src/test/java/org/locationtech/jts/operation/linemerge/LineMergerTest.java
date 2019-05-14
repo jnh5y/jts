@@ -18,7 +18,7 @@ import java.util.Iterator;
 
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.util.Assert;
 
 import junit.framework.TestCase;
@@ -30,7 +30,7 @@ import junit.framework.TestCase;
  * @version 1.7
  */
 public class LineMergerTest extends TestCase {
-  private static WKTReader reader = new WKTReader();
+  private static WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
 
   public LineMergerTest(String name) {
     super(name);

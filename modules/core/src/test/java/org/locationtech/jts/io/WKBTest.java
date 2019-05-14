@@ -37,7 +37,7 @@ public class WKBTest
   }
 
   private GeometryFactory geomFactory = new GeometryFactory();
-  private WKTReader rdr = new WKTReader(geomFactory);
+  private WKTReaderBreakBuild rdr = new WKTReaderBreakBuild(geomFactory);
 
   public WKBTest(String name)
   {
@@ -152,7 +152,7 @@ public class WKBTest
 	private void runWKBTestPackedCoordinate(String wkt) throws IOException, ParseException {
 		GeometryFactory geomFactory = new GeometryFactory(
 				new PackedCoordinateSequenceFactory(PackedCoordinateSequenceFactory.DOUBLE));
-	  WKTReader rdr = new WKTReader(geomFactory);
+	  WKTReaderBreakBuild rdr = new WKTReaderBreakBuild(geomFactory);
 		Geometry g = rdr.read(wkt);
 		
 		// Since we are using a PCS of dim=2, only check 2-dimensional storage
@@ -162,7 +162,7 @@ public class WKBTest
 
 	private void runWKBTestCoordinateArray(String wkt) throws IOException, ParseException {
 	  GeometryFactory geomFactory = new GeometryFactory();
-	  WKTReader rdr = new WKTReader(geomFactory);
+	  WKTReaderBreakBuild rdr = new WKTReaderBreakBuild(geomFactory);
 		Geometry g = rdr.read(wkt);
 		
 		// CoordinateArrays support dimension 3, so test both dimensions

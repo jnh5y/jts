@@ -37,7 +37,7 @@ import org.locationtech.jts.util.Assert;
  * The Well-Known Text format is defined in the
  * OGC <a href="http://www.opengis.org/techno/specs.htm">
  * <i>Simple Features Specification for SQL</i></a>.
- * See {@link WKTReader} for a formal specification of the format syntax.
+ * See {@link WKTReaderBreakBuild} for a formal specification of the format syntax.
  * <p>
  * The <code>WKTWriter</code> outputs coordinates rounded to the precision
  * model. Only the maximum number of decimal places 
@@ -51,7 +51,7 @@ import org.locationtech.jts.util.Assert;
  * to output LinearRings.
  *
  * @version 1.7
- * @see WKTReader
+ * @see WKTReaderBreakBuild
  */
 public class WKTWriter
 {

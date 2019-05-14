@@ -85,7 +85,7 @@ public class MultiFormatReader
   private static final int MAX_CHARS_TO_CHECK = 6;
 
   private GeometryFactory geomFactory;
-  private WKTReader wktReader;
+  private WKTReaderBreakBuild wktReaderBreakBuild;
   private WKBReader wkbReader;
 
   public MultiFormatReader()
@@ -96,7 +96,7 @@ public class MultiFormatReader
   public MultiFormatReader(GeometryFactory geomFactory)
   {
     this.geomFactory = geomFactory;
-    wktReader = new WKTReader(geomFactory);
+    wktReaderBreakBuild = new WKTReaderBreakBuild(geomFactory);
     wkbReader = new WKBReader(geomFactory);
   }
 

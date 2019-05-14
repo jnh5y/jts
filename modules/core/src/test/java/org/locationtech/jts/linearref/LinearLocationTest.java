@@ -15,11 +15,11 @@ package org.locationtech.jts.linearref;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.LineSegment;
-import org.locationtech.jts.io.WKTReader;
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
-
+import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**
@@ -31,7 +31,7 @@ import junit.textui.TestRunner;
 public class LinearLocationTest 
 	extends TestCase
 {
-  private WKTReader reader = new WKTReader();
+  private WKTReaderBreakBuild reader = new WKTReaderBreakBuild();
 
   public static void main(String args[]) {
     TestRunner.run(LinearLocationTest.class);
