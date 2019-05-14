@@ -44,7 +44,7 @@ public class WKBHexFileReader
 	
   /**
    * Creates a new <tt>WKBHexFileReader</tt> given the <tt>File</tt> to read from 
-   * and a <tt>WKTReader</tt> to use to parse the geometries.
+   * and a <tt>WKTReaderBreakBuild</tt> to use to parse the geometries.
    * 
    * @param file the <tt>File</tt> to read from
    * @param wkbReader the geometry reader to use

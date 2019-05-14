@@ -16,7 +16,6 @@ import java.util.*;
 
 import org.locationtech.jts.geom.*;
 import org.locationtech.jts.io.WKTReaderBreakBuild;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 /**
  * Shows a technique for identifying the location of self-intersections

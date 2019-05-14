@@ -16,7 +16,6 @@ import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.textui.TestRunner;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 /**
  * Tests PointInRing algorithms

@@ -19,7 +19,6 @@ import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 public class Distance3DOpTest extends TestCase 

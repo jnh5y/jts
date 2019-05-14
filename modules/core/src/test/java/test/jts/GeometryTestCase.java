@@ -25,7 +25,6 @@ import org.locationtech.jts.io.Ordinate;
 import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 /**
  * A base class for Geometry tests which provides various utility methods.
@@ -117,7 +116,7 @@ public abstract class GeometryTestCase extends TestCase{
    * Gets a {@link WKTReaderBreakBuild} to read geometries from WKT with expected ordinates.
    *
    * @param ordinateFlags a set of expected ordinates
-   * @return a {@code WKTReader}
+   * @return a {@code WKTReaderBreakBuild}
    */
   public static WKTReaderBreakBuild getWKTReader(EnumSet<Ordinate> ordinateFlags) {
     return getWKTReader(ordinateFlags, new PrecisionModel());
@@ -129,7 +128,7 @@ public abstract class GeometryTestCase extends TestCase{
    * @param ordinateFlags a set of expected ordinates
    * @param scale         a scale value to create a {@link PrecisionModel}
    *
-   * @return a {@code WKTReader}
+   * @return a {@code WKTReaderBreakBuild}
    */
   public static WKTReaderBreakBuild getWKTReader(EnumSet<Ordinate> ordinateFlags, double scale) {
     return getWKTReader(ordinateFlags, new PrecisionModel(scale));
@@ -141,7 +140,7 @@ public abstract class GeometryTestCase extends TestCase{
    * @param ordinateFlags a set of expected ordinates
    * @param precisionModel a precision model
    *
-   * @return a {@code WKTReader}
+   * @return a {@code WKTReaderBreakBuild}
    */
   public static WKTReaderBreakBuild getWKTReader(EnumSet<Ordinate> ordinateFlags, PrecisionModel precisionModel) {
 

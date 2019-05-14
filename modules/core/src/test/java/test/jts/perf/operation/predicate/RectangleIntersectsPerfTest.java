@@ -21,7 +21,6 @@ import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.locationtech.jts.geom.util.SineStarFactory;
 import org.locationtech.jts.io.WKTReaderBreakBuild;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.io.WKTWriter;
 import org.locationtech.jts.precision.GeometryPrecisionReducer;
 import org.locationtech.jts.util.GeometricShapeFactory;

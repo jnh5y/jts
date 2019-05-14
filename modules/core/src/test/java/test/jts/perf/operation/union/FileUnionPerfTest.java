@@ -18,7 +18,6 @@ import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.locationtech.jts.io.WKTFileReader;
 import org.locationtech.jts.io.WKTReaderBreakBuild;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.io.WKTWriter;
 
 import test.jts.TestFiles;

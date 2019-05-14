@@ -14,7 +14,6 @@ package org.locationtech.jtsexample.precision;
 
 import org.locationtech.jts.geom.*;
 import org.locationtech.jts.io.WKTReaderBreakBuild;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.precision.EnhancedPrecisionOp;
 
 /**

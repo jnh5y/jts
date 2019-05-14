@@ -44,7 +44,7 @@ public class WKTFileReader
 	
   /**
    * Creates a new <tt>WKTFileReader</tt> given the <tt>File</tt> to read from 
-   * and a <tt>WKTReader</tt> to use to parse the geometries.
+   * and a <tt>WKTReaderBreakBuild</tt> to use to parse the geometries.
    * 
    * @param file the <tt>File</tt> to read from
    * @param wktReaderBreakBuild the geometry reader to use

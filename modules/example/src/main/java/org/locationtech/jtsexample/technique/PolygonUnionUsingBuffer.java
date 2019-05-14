@@ -14,7 +14,6 @@ package org.locationtech.jtsexample.technique;
 
 import org.locationtech.jts.geom.*;
 import org.locationtech.jts.io.WKTReaderBreakBuild;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 /**
  * Shows a technique for using a zero-width buffer to compute

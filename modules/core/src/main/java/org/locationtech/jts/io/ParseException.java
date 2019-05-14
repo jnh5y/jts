@@ -14,7 +14,7 @@
 package org.locationtech.jts.io;
 
 /**
- *  Thrown by a <code>WKTReader</code> when a parsing problem occurs.
+ *  Thrown by a <code>WKTReaderBreakBuild</code> when a parsing problem occurs.
  *
  *@version 1.7
  */
@@ -32,7 +32,7 @@ public class ParseException extends Exception {
   /**
    *  Creates a <code>ParseException</code> with <code>e</code>s detail message.
    *
-   *@param  e  an exception that occurred while a <code>WKTReader</code> was
+   *@param  e  an exception that occurred while a <code>WKTReaderBreakBuild</code> was
    *      parsing a Well-known Text string
    */
   public ParseException(Exception e) {

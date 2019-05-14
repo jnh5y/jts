@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.locationtech.jts.io.WKTReaderBreakBuild;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.operation.polygonize.Polygonizer;
 
 /**

@@ -26,7 +26,6 @@ import org.locationtech.jts.io.WKTFileReader;
 import org.locationtech.jts.io.WKTReaderBreakBuild;
 import org.locationtech.jts.util.Stopwatch;
 
-import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import test.jts.GeometryTestCase;
 import test.jts.TestFiles;

@@ -23,7 +23,6 @@ import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.CoordinateSequence;
 import org.locationtech.jts.geom.CoordinateSequenceFactory;
 
-import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryCollection;
 import org.locationtech.jts.geom.GeometryFactory;
@@ -36,25 +35,24 @@ import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.Polygon;
 import org.locationtech.jts.geom.PrecisionModel;
 import org.locationtech.jts.geom.impl.CoordinateArraySequenceFactory;
-import org.locationtech.jts.geom.impl.PackedCoordinateSequenceFactory;
 import org.locationtech.jts.util.Assert;
 import org.locationtech.jts.util.AssertionFailedException;
 
 /**
  * Converts a geometry in Well-Known Text format to a {@link Geometry}.
  * <p>
- * <code>WKTReader</code> supports
+ * <code>WKTReaderBreakBuild</code> supports
  * extracting <code>Geometry</code> objects from either {@link Reader}s or
  *  {@link String}s. This allows it to function as a parser to read <code>Geometry</code>
  *  objects from text blocks embedded in other data formats (e.g. XML). <P>
  * <p>
- *  A <code>WKTReader</code> is parameterized by a <code>GeometryFactory</code>,
+ *  A <code>WKTReaderBreakBuild</code> is parameterized by a <code>GeometryFactory</code>,
  *  to allow it to create <code>Geometry</code> objects of the appropriate
  *  implementation. In particular, the <code>GeometryFactory</code>
  *  determines the <code>PrecisionModel</code> and <code>SRID</code> that is
  *  used. <P>
  *
- *  The <code>WKTReader</code> converts all input numbers to the precise
+ *  The <code>WKTReaderBreakBuild</code> converts all input numbers to the precise
  *  internal representation.
  *
  * <h3>Notes:</h3>

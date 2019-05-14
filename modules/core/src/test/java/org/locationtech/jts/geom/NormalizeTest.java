@@ -17,7 +17,6 @@ import org.locationtech.jts.geom.impl.PackedCoordinateSequenceFactory;
 import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**

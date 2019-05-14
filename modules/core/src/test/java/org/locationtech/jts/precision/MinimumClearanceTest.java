@@ -19,7 +19,6 @@ import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 public class MinimumClearanceTest extends TestCase {
   public static void main(String args[]) {

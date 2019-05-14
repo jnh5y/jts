@@ -20,7 +20,6 @@ import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.textui.TestRunner;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 import test.jts.GeometryTestCase;
 
 

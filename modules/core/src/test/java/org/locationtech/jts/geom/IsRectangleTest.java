@@ -15,7 +15,6 @@ import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
-import org.locationtech.jts.io.WKTReaderBreakBuild;
 
 
 /**

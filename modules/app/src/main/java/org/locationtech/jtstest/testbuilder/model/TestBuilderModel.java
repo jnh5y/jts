@@ -21,7 +21,6 @@ import org.locationtech.jts.math.MathUtil;
 import org.locationtech.jts.util.Assert;
 import org.locationtech.jtstest.test.TestCaseList;
 import org.locationtech.jtstest.test.Testable;
-import org.locationtech.jtstest.testbuilder.AppConstants;
 import org.locationtech.jtstest.testbuilder.GeometryDepiction;
 import org.locationtech.jtstest.testbuilder.ui.*;
 import org.locationtech.jtstest.testbuilder.ui.style.BasicStyle;
@@ -213,7 +212,7 @@ public class TestBuilderModel
   throws ParseException, IOException 
   {
     GeometryFactory geomFact = getGeometryFactory();
-    WKTReader reader = new WKTReader(geomFact);
+    WKTReaderBreakBuild reader = new WKTReaderBreakBuild(geomFact);
     WKTFileReader fileReader = new WKTFileReader(new StringReader(geoms), reader);
     List geomList = fileReader.read();
     
