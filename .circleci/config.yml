@@ -34,7 +34,7 @@ jobs: # a collection of steps
       # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
       #  path: target/demo-java-spring-0.0.1-SNAPSHOT.jar
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples 
-  test:
+  test_hatbox:
     working_directory: ~/hatbox 
     docker:
       - image: circleci/openjdk:8u171-jdk 
@@ -50,9 +50,9 @@ jobs: # a collection of steps
             mvn package
 workflows:
   version: 2
-  build_and_test:
+  build_and_test_hatbox:
     jobs:
       - build
-      - test:
+      - test_hatbox:
           requires: 
             - build
