@@ -39,8 +39,7 @@ jobs: # a collection of steps
     docker:
       - image: circleci/openjdk:8u171-jdk 
     steps:      
-      - pre: 
-        git clone git@github.com:jnh5y/hatbox.git ~/hatbox
+      - pre: git clone git@github.com:jnh5y/hatbox.git ~/hatbox
       - run: mvn package
 workflows:
   version: 2
@@ -48,5 +47,5 @@ workflows:
     jobs:
       - build
       - test
-        requires: 
-          - build
+        #  requires: 
+        #  - build
