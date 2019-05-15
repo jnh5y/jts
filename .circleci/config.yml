@@ -45,7 +45,7 @@ jobs: # a collection of steps
       - image: circleci/openjdk:8u171-jdk 
     steps:  
       - restore_cache:
-        key: jts
+          key: jts
       - run:
           name: See what is in the M2 repo
           command: find ~/.m2 | grep jts
