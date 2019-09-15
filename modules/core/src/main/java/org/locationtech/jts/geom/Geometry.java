@@ -190,7 +190,7 @@ public abstract class Geometry
    * An object reference which can be used to carry ancillary data defined
    * by the client.
    */
-  private Object userData = null;
+  private Object userData = "";
 
   /**
    * Creates a new <code>Geometry</code> via the specified GeometryFactory.
