@@ -208,7 +208,7 @@ public class Polygon
     return true;
   }
 
-  public LinearRing getExteriorRing() {
+  public LineString getExteriorRing() {
     return shell;
   }
 
