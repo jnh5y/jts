@@ -58,6 +58,8 @@ public class Node
 
   public Envelope getEnvelope() { return env; }
 
+  public int getLevel() { return level; }
+
   protected boolean isSearchMatch(Envelope searchEnv)
   {
   	if (searchEnv == null) return false;
