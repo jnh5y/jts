@@ -21,6 +21,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
+import org.locationtech.jts.geom.Envelope;
 import org.locationtech.jts.index.ItemVisitor;
 import org.locationtech.jts.util.Assert;
 
@@ -172,12 +173,31 @@ public abstract class AbstractSTRtree implements Serializable {
     return root; 
   }
 
+  public void setRoot(AbstractNode root) {
+    this.root = root;
+  }
+
   /**
    * Returns the maximum number of child nodes that a node may have.
    * 
    * @return the node capacity
    */
   public int getNodeCapacity() { return nodeCapacity; }
+
+  public ArrayList getItemBoundables() { return itemBoundables; }
+
+  public void setItemBoundables(ArrayList itemBoundables) {
+    this.itemBoundables = itemBoundables;
+  }
+
+  public boolean isBuilt() {
+    return built;
+  }
+
+  public void setBuilt(boolean built) {
+    this.built = built;
+  }
+
 
   /**
    * Tests whether the index contains any items.
@@ -453,5 +473,60 @@ public abstract class AbstractSTRtree implements Serializable {
   }
 
   protected abstract Comparator getComparator();
+
+  /**
+   * This function traverses the boundaries of all leaf nodes.
+   * This function should be called after all insertions.
+   * @return The list of lea nodes boundaries
+   */
+  protected List queryBoundary()
+  {
+    build();
+    List boundaries = new ArrayList();
+    if (isEmpty()) {
+      //Assert.isTrue(root.getBounds() == null);
+      //If the root is empty, we stop traversing. This should not happen.
+      return boundaries;
+    }
+
+    queryBoundary(root, boundaries);
+
+    return boundaries;
+  }
+  /**
+   * This function is to traverse the children of the root.
+   * @param node
+   * @param boundaries
+   */
+  private void queryBoundary(AbstractNode node, List boundaries) {
+    List childBoundables = node.getChildBoundables();
+    boolean flagLeafnode=true;
+    for (int i = 0; i < childBoundables.size(); i++) {
+      Boundable childBoundable = (Boundable) childBoundables.get(i);
+      if (childBoundable instanceof AbstractNode) {
+        //We find this is not a leaf node.
+        flagLeafnode=false;
+        break;
+
+      }
+    }
+    if(flagLeafnode==true)
+    {
+      boundaries.add((Envelope)node.getBounds());
+      return;
+    }
+    else
+    {
+      for (int i = 0; i < childBoundables.size(); i++)
+      {
+        Boundable childBoundable = (Boundable) childBoundables.get(i);
+        if (childBoundable instanceof AbstractNode)
+        {
+          queryBoundary((AbstractNode) childBoundable, boundaries);
+        }
+
+      }
+    }
+  }
 
 }
