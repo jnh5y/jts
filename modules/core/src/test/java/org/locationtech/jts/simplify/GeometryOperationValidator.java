@@ -12,10 +12,9 @@
 
 package org.locationtech.jts.simplify;
 
+import org.junit.Assert;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.WKTReader;
-
-import junit.framework.Assert;
 
 
 /**

@@ -16,6 +16,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import org.junit.Assert;
 
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryCollection;
@@ -29,7 +30,6 @@ import org.locationtech.jts.io.WKTWriter;
 import org.locationtech.jts.operation.buffer.validate.BufferResultValidator;
 import org.locationtech.jts.util.StringUtil;
 
-import junit.framework.Assert;
 
 
 /**
